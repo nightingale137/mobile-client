@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>首页</title>
+	<link rel="stylesheet"  href="lib/jquery.mobile-1.4.3/jquery.mobile-1.4.3.min.css">
+  <link rel="stylesheet" href="lib/jquery.mobile.datepicker/jquery.mobile.datepicker.css" />
+  <link rel="stylesheet"  href="css/app.css">
+	<script src="lib/jquery.js"></script>
+  <script src="lib/jquery.ui.datepicker.js"></script>
+	<script src="lib/jquery.mobile-1.4.3/jquery.mobile-1.4.3.min.js"></script>
+  <script src="lib/jquery.mobile.datepicker/jquery.mobile.datepicker.js"></script>
+  <!--script src="lib/jquery-cookie.js"></script-->
+  <script src="js/main.js"></script>
+</head>
+<body>
+
+<!-- 首页 -->
+<div data-role="page" class="" id="home-page">
+  <div data-role="header" data-theme="b" data-position="fixed">
+    <a href="#cities-page" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-location">杭州</a>
+    <h1>首页</h1>
+  </div>
+
+  <a href="#"><div class="adv-bar"></div></a>
+
+  <div class="ui-grid-a main-btn-group">
+    <div class="ui-block-a"><a class="ui-btn ui-corner-all" id="earn_btn" href="#tasks-page" category="all">我要赚钱</a></div>
+    <div class="ui-block-b"><a class="ui-btn ui-corner-all" id="requirment_btn" href="#publish-page">我有需求</a></div>
+  </div><!-- /grid-c -->
+  
+  <div class="home-btn-group">
+    <div class="ui-grid-c">
+      <a class="ui-block-a" href="#tasks-page" category="model">
+        <div class="btn-img" style="background-image: url(image/home/model.gif)"></div>
+        <div class="ui-bar category-btn">模特</div>
+      </a>
+      <a class="ui-block-b" href="#tasks-page" category="teach">
+        <div class="btn-img" style="background-image: url(image/home/teach.gif)"></div>
+        <div class="ui-bar category-btn">家教</div>
+      </a>
+      <a class="ui-block-c" href="#tasks-page" category="service">
+        <div class="btn-img" style="background-image: url(image/home/service.gif)"></div>
+        <div class="ui-bar category-btn">服务</div>
+      </a>
+      <a class="ui-block-d" href="#tasks-page" category="media">
+        <div class="btn-img" style="background-image: url(image/home/media.gif)"></div>
+        <div class="ui-bar category-btn">影音</div>
+      </a>
+      <a class="ui-block-a" href="#tasks-page" category="develop">
+        <div class="btn-img" style="background-image: url(image/home/develop.gif)"></div>
+        <div class="ui-bar category-btn">开发</div>
+      </a>
+      <a class="ui-block-b" href="#tasks-page" category="design">
+        <div class="btn-img" style="background-image: url(image/home/design.gif)"></div>
+        <div class="ui-bar category-btn">设计</div>
+      </a>
+      <a class="ui-block-c" href="#tasks-page" category="other">
+        <div class="btn-img" style="background-image: url(image/home/other.gif)"></div>
+        <div class="ui-bar category-btn">其他</div>
+      </a>
+      <a class="ui-block-d" href="#tasks-page" category="server">
+        <div class="btn-img" style="background-image: url(image/home/server.gif)"></div>
+        <div class="ui-bar category-btn">服务方</div>
+      </a>
+    </div><!-- /grid-c -->
+  </div>
+
+  <div data-role="footer" class="" data-theme="a" data-position="fixed">
+    <div data-role="navbar" class="navbar" data-grid="c">
+      <ul>
+          <li><a href="#" id="category" data-icon="home" class="ui-btn-active">首页</a></li>
+          <li><a href="#tasks-page" id="near" data-icon="location">附近</a></li>
+          <li><a href="#publish-page" id="publish" data-icon="cloud">发布</a></li>
+          <li><a href="#user-center-page" id="individual" data-icon="user">个人中心</a></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 城市 -->
+<div data-role="page" id="cities-page">
+
+	<div data-role="header">
+		<h1>城市列表</h1>
+		<a href="#" data-rel="back" data-icon="arrow-l">取消</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+        <div id="sorter">
+
+            <ul data-role="listview">
+                <li><span>A</span></li>
+                <li><span>B</span></li>
+                <li><span>C</span></li>
+                <li><span>D</span></li>
+                <li><span>E</span></li>
+                <li><span>F</span></li>
+                <li><span>G</span></li>
+                <li><span>H</span></li>
+                <li><span>I</span></li>
+                <li><span>J</span></li>
+                <li><span>K</span></li>
+                <li><span>L</span></li>
+                <li><span>M</span></li>
+                <li><span>N</span></li>
+                <li><span>O</span></li>
+                <li><span>P</span></li>
+                <li><span>Q</span></li>
+                <li><span>R</span></li>
+                <li><span>S</span></li>
+                <li><span>T</span></li>
+                <li><span>U</span></li>
+                <li><span>V</span></li>
+                <li><span>W</span></li>
+                <li><span>X</span></li>
+                <li><span>Y</span></li>
+                <li><span>Z</span></li>
+            </ul>
+        </div><!-- /sorter -->
+
+        <ul data-role="listview" id="gpsCityList" style="margin-bottom:12px">
+          <li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit ui-first-child">定位当前所在城市</li>
+          <li><a href="#" id="gps_city">位置获取中...</a></li>
+        </ul>
+
+        <ul data-role="listview" id="hotCityList" style="margin-bottom:12px">
+          <li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit ui-first-child">热门城市</li>
+          <li><a href="#">北京</a></li>
+          <li><a href="#">上海</a></li>
+          <li><a href="#">广州</a></li>
+          <li><a href="#">深圳</a></li>
+          <li><a href="#">武汉</a></li>
+          <li><a href="#">成都</a></li>
+          <li><a href="#">重庆</a></li>
+          <li><a href="#">常州</a></li>
+          <li><a href="#">天津</a></li>
+          <li><a href="#">南京</a></li>
+          <li><a href="#">大连</a></li>
+        </ul>
+
+        <ul data-role="listview" data-autodividers="true" id="sortedList">
+          <li><a href="#">A阿坝</a></li>
+          <li><a href="#">A阿克苏</a></li>
+          <li><a href="#">A阿拉尔</a></li>
+          <li><a href="#">A阿拉善</a></li>
+          <li><a href="#">A阿勒泰</a></li>
+          <li><a href="#">A阿里</a></li>
+          <li><a href="#">A安康</a></li>
+          <li><a href="#">A安庆</a></li>
+          <li><a href="#">A鞍山</a></li>
+          <li><a href="#">A安顺</a></li>
+          <li><a href="#">A安阳</a></li>
+          <li><a href="#">A澳门
+          </a></li>
+          <li><a href="#">B白城</a></li>
+          <li><a href="#">B百色</a></li>
+          <li><a href="#">B白山</a></li>
+          <li><a href="#">B白银</a></li>
+          <li><a href="#">B保定</a></li>
+          <li><a href="#">B宝鸡</a></li>
+          <li><a href="#">B保山</a></li>
+          <li><a href="#">B包头</a></li>
+          <li><a href="#">B巴彦淖尔</a></li>
+          <li><a href="#">B巴音郭楞</a></li>
+          <li><a href="#">B巴中</a></li>
+          <li><a href="#">B北海</a></li>
+          <li><a href="#">B北京</a></li>
+          <li><a href="#">B蚌埠</a></li>
+          <li><a href="#">B本溪</a></li>
+          <li><a href="#">B毕节</a></li>
+          <li><a href="#">B滨州</a></li>
+          <li><a href="#">B博尔塔拉</a></li>
+          <li><a href="#">B亳州
+          </a></li>
+          <li><a href="#">C沧州</a></li>
+          <li><a href="#">C长春</a></li>
+          <li><a href="#">C常德</a></li>
+          <li><a href="#">C昌都</a></li>
+          <li><a href="#">C昌吉</a></li>
+          <li><a href="#">C长沙</a></li>
+          <li><a href="#">C长治</a></li>
+          <li><a href="#">C常州</a></li>
+          <li><a href="#">C巢湖</a></li>
+          <li><a href="#">C朝阳市</a></li>
+          <li><a href="#">C潮州</a></li>
+          <li><a href="#">C承德</a></li>
+          <li><a href="#">C成都</a></li>
+          <li><a href="#">C郴州</a></li>
+          <li><a href="#">C赤峰</a></li>
+          <li><a href="#">C池州</a></li>
+          <li><a href="#">C重庆</a></li>
+          <li><a href="#">C崇左</a></li>
+          <li><a href="#">C楚雄</a></li>
+          <li><a href="#">C滁州
+          </a></li>
+          <li><a href="#">D大理</a></li>
+          <li><a href="#">D大连</a></li>
+          <li><a href="#">D丹东</a></li>
+          <li><a href="#">D大庆</a></li>
+          <li><a href="#">D大同</a></li>
+          <li><a href="#">D大兴安岭</a></li>
+          <li><a href="#">D达州</a></li>
+          <li><a href="#">D德宏</a></li>
+          <li><a href="#">D德阳</a></li>
+          <li><a href="#">D德州</a></li>
+          <li><a href="#">D定西</a></li>
+          <li><a href="#">D迪庆</a></li>
+          <li><a href="#">D东莞</a></li>
+          <li><a href="#">D东营
+          </a></li>
+          <li><a href="#">E鄂尔多斯</a></li>
+          <li><a href="#">E恩施</a></li>
+          <li><a href="#">E鄂州
+          </a></li>
+          <li><a href="#">F防城港</a></li>
+          <li><a href="#">F佛山</a></li>
+          <li><a href="#">F抚顺</a></li>
+          <li><a href="#">F阜新</a></li>
+          <li><a href="#">F阜阳</a></li>
+          <li><a href="#">F福州
+          </a></li>
+          <li><a href="#">G甘南</a></li>
+          <li><a href="#">G赣州</a></li>
+          <li><a href="#">G甘孜</a></li>
+          <li><a href="#">G广安</a></li>
+          <li><a href="#">G广元</a></li>
+          <li><a href="#">G广州</a></li>
+          <li><a href="#">G贵港</a></li>
+          <li><a href="#">G桂林</a></li>
+          <li><a href="#">G贵阳</a></li>
+          <li><a href="#">G果洛</a></li>
+          <li><a href="#">G固原
+          </a></li>
+          <li><a href="#">H哈尔滨</a></li>
+          <li><a href="#">H海北</a></li>
+          <li><a href="#">H海东</a></li>
+          <li><a href="#">H海口</a></li>
+          <li><a href="#">H海南州</a></li>
+          <li><a href="#">H海西</a></li>
+          <li><a href="#">H哈密</a></li>
+          <li><a href="#">H邯郸</a></li>
+          <li><a href="#">H杭州</a></li>
+          <li><a href="#">H汉中</a></li>
+          <li><a href="#">H鹤壁</a></li>
+          <li><a href="#">H河池</a></li>
+          <li><a href="#">H合肥</a></li>
+          <li><a href="#">H鹤岗</a></li>
+          <li><a href="#">H黑河</a></li>
+          <li><a href="#">H衡水</a></li>
+          <li><a href="#">H衡阳</a></li>
+          <li><a href="#">H和田</a></li>
+          <li><a href="#">H河源</a></li>
+          <li><a href="#">H菏泽</a></li>
+          <li><a href="#">H贺州</a></li>
+          <li><a href="#">H伊春</a></li>
+          <li><a href="#">H红河</a></li>
+          <li><a href="#">H淮安</a></li>
+          <li><a href="#">H淮北</a></li>
+          <li><a href="#">H怀化</a></li>
+          <li><a href="#">H淮南</a></li>
+          <li><a href="#">H黄冈</a></li>
+          <li><a href="#">H黄南</a></li>
+          <li><a href="#">H黄山</a></li>
+          <li><a href="#">H黄石</a></li>
+          <li><a href="#">H呼和浩特</a></li>
+          <li><a href="#">H惠州</a></li>
+          <li><a href="#">H葫芦岛</a></li>
+          <li><a href="#">H呼伦贝尔</a></li>
+          <li><a href="#">H湖州
+          </a></li>
+          <li><a href="#">J佳木斯</a></li>
+          <li><a href="#">J吉安</a></li>
+          <li><a href="#">J江门</a></li>
+          <li><a href="#">J焦作</a></li>
+          <li><a href="#">J嘉兴</a></li>
+          <li><a href="#">J嘉峪关</a></li>
+          <li><a href="#">J揭阳</a></li>
+          <li><a href="#">J吉林</a></li>
+          <li><a href="#">J济南</a></li>
+          <li><a href="#">J金昌</a></li>
+          <li><a href="#">J晋城</a></li>
+          <li><a href="#">J景德镇</a></li>
+          <li><a href="#">J荆门</a></li>
+          <li><a href="#">J荆州</a></li>
+          <li><a href="#">J金华</a></li>
+          <li><a href="#">J济宁</a></li>
+          <li><a href="#">J晋中</a></li>
+          <li><a href="#">J锦州</a></li>
+          <li><a href="#">J九江</a></li>
+          <li><a href="#">J酒泉</a></li>
+          <li><a href="#">J鸡西</a></li>
+          <li><a href="#">J济源</a></li>
+          <li><a href="#">J泰州</a></li>
+          <li><a href="#">J抚州</a></li>
+          <li><a href="#">J宜春
+          </a></li>
+          <li><a href="#">K开封</a></li>
+          <li><a href="#">K喀什</a></li>
+          <li><a href="#">K克拉玛依</a></li>
+          <li><a href="#">K克孜勒苏</a></li>
+          <li><a href="#">K昆明
+          </a></li>
+          <li><a href="#">L来宾</a></li>
+          <li><a href="#">L莱芜</a></li>
+          <li><a href="#">L廊坊</a></li>
+          <li><a href="#">L兰州</a></li>
+          <li><a href="#">L拉萨</a></li>
+          <li><a href="#">L乐山</a></li>
+          <li><a href="#">L凉山</a></li>
+          <li><a href="#">L连云港</a></li>
+          <li><a href="#">L聊城</a></li>
+          <li><a href="#">L辽阳</a></li>
+          <li><a href="#">L辽源</a></li>
+          <li><a href="#">L丽江</a></li>
+          <li><a href="#">L临沧</a></li>
+          <li><a href="#">L临汾</a></li>
+          <li><a href="#">L临夏</a></li>
+          <li><a href="#">L临沂</a></li>
+          <li><a href="#">L林芝</a></li>
+          <li><a href="#">L丽水</a></li>
+          <li><a href="#">L六盘水</a></li>
+          <li><a href="#">L柳州</a></li>
+          <li><a href="#">L陇南</a></li>
+          <li><a href="#">L龙岩</a></li>
+          <li><a href="#">L娄底</a></li>
+          <li><a href="#">L六安</a></li>
+          <li><a href="#">L漯河</a></li>
+          <li><a href="#">L洛阳</a></li>
+          <li><a href="#">L泸州</a></li>
+          <li><a href="#">L吕梁
+          </a></li>
+          <li><a href="#">M马鞍山</a></li>
+          <li><a href="#">M茂名</a></li>
+          <li><a href="#">M眉山</a></li>
+          <li><a href="#">M梅州</a></li>
+          <li><a href="#">M绵阳</a></li>
+          <li><a href="#">M牡丹江
+          </a></li>
+          <li><a href="#">N南昌</a></li>
+          <li><a href="#">N南充</a></li>
+          <li><a href="#">N南京</a></li>
+          <li><a href="#">N南宁</a></li>
+          <li><a href="#">N南平</a></li>
+          <li><a href="#">N南通</a></li>
+          <li><a href="#">N南阳</a></li>
+          <li><a href="#">N那曲</a></li>
+          <li><a href="#">N内江</a></li>
+          <li><a href="#">N宁波</a></li>
+          <li><a href="#">N宁德</a></li>
+          <li><a href="#">N怒江
+          </a></li>
+          <li><a href="#">P盘锦</a></li>
+          <li><a href="#">P攀枝花</a></li>
+          <li><a href="#">P平顶山</a></li>
+          <li><a href="#">P平凉</a></li>
+          <li><a href="#">P萍乡</a></li>
+          <li><a href="#">P普洱</a></li>
+          <li><a href="#">P莆田</a></li>
+          <li><a href="#">P濮阳
+          </a></li>
+          <li><a href="#">Q黔东南</a></li>
+          <li><a href="#">Q潜江</a></li>
+          <li><a href="#">Q黔南</a></li>
+          <li><a href="#">Q黔西南</a></li>
+          <li><a href="#">Q青岛</a></li>
+          <li><a href="#">Q庆阳</a></li>
+          <li><a href="#">Q清远</a></li>
+          <li><a href="#">Q秦皇岛</a></li>
+          <li><a href="#">Q钦州</a></li>
+          <li><a href="#">Q齐齐哈尔</a></li>
+          <li><a href="#">Q七台河</a></li>
+          <li><a href="#">Q泉州</a></li>
+          <li><a href="#">Q曲靖</a></li>
+          <li><a href="#">Q衢州
+          </a></li>
+          <li><a href="#">R日喀则</a></li>
+          <li><a href="#">R日照
+          </a></li>
+          <li><a href="#">S三门峡</a></li>
+          <li><a href="#">S三明</a></li>
+          <li><a href="#">S三亚</a></li>
+          <li><a href="#">S上海</a></li>
+          <li><a href="#">S商洛</a></li>
+          <li><a href="#">S商丘</a></li>
+          <li><a href="#">S上饶</a></li>
+          <li><a href="#">S山南</a></li>
+          <li><a href="#">S汕头</a></li>
+          <li><a href="#">S汕尾</a></li>
+          <li><a href="#">S韶关</a></li>
+          <li><a href="#">S绍兴</a></li>
+          <li><a href="#">S邵阳</a></li>
+          <li><a href="#">S神农架</a></li>
+          <li><a href="#">S沈阳</a></li>
+          <li><a href="#">S深圳</a></li>
+          <li><a href="#">S石河子</a></li>
+          <li><a href="#">S石家庄</a></li>
+          <li><a href="#">S十堰</a></li>
+          <li><a href="#">S石嘴山</a></li>
+          <li><a href="#">S双鸭山</a></li>
+          <li><a href="#">S朔州</a></li>
+          <li><a href="#">S四平</a></li>
+          <li><a href="#">S松原</a></li>
+          <li><a href="#">S绥化</a></li>
+          <li><a href="#">S宿州</a></li>
+          <li><a href="#">S遂宁</a></li>
+          <li><a href="#">S随州</a></li>
+          <li><a href="#">S宿迁</a></li>
+          <li><a href="#">S苏州</a></li>
+          <li><a href="#">S榆林
+          </a></li>
+          <li><a href="#">T塔城</a></li>
+          <li><a href="#">T泰安</a></li>
+          <li><a href="#">T太原</a></li>
+          <li><a href="#">T唐山</a></li>
+          <li><a href="#">T天津</a></li>
+          <li><a href="#">T天门</a></li>
+          <li><a href="#">T天水</a></li>
+          <li><a href="#">T铁岭</a></li>
+          <li><a href="#">T铜川</a></li>
+          <li><a href="#">T通化</a></li>
+          <li><a href="#">T通辽</a></li>
+          <li><a href="#">T铜陵</a></li>
+          <li><a href="#">T铜仁</a></li>
+          <li><a href="#">T吐鲁番</a></li>
+          <li><a href="#">T图木舒克
+          </a></li>
+          <li><a href="#">W潍坊</a></li>
+          <li><a href="#">W威海</a></li>
+          <li><a href="#">W渭南</a></li>
+          <li><a href="#">W文山</a></li>
+          <li><a href="#">W温州</a></li>
+          <li><a href="#">W乌海</a></li>
+          <li><a href="#">W武汉</a></li>
+          <li><a href="#">W芜湖</a></li>
+          <li><a href="#">W五家渠</a></li>
+          <li><a href="#">W乌兰察布</a></li>
+          <li><a href="#">W乌鲁木齐</a></li>
+          <li><a href="#">W武威</a></li>
+          <li><a href="#">W无锡</a></li>
+          <li><a href="#">W五指山</a></li>
+          <li><a href="#">W吴忠</a></li>
+          <li><a href="#">W梧州
+          </a></li>
+          <li><a href="#">X厦门</a></li>
+          <li><a href="#">X西安</a></li>
+          <li><a href="#">X香港</a></li>
+          <li><a href="#">X湘潭</a></li>
+          <li><a href="#">X湘西</a></li>
+          <li><a href="#">X襄阳</a></li>
+          <li><a href="#">X咸宁</a></li>
+          <li><a href="#">X仙桃</a></li>
+          <li><a href="#">X咸阳</a></li>
+          <li><a href="#">X孝感</a></li>
+          <li><a href="#">X锡林郭勒</a></li>
+          <li><a href="#">X兴安</a></li>
+          <li><a href="#">X邢台</a></li>
+          <li><a href="#">X西宁</a></li>
+          <li><a href="#">X新乡</a></li>
+          <li><a href="#">X信阳</a></li>
+          <li><a href="#">X新余</a></li>
+          <li><a href="#">X忻州</a></li>
+          <li><a href="#">X西双版纳</a></li>
+          <li><a href="#">X宣城</a></li>
+          <li><a href="#">X许昌</a></li>
+          <li><a href="#">X徐州
+          </a></li>
+          <li><a href="#">Y雅安</a></li>
+          <li><a href="#">Y延安</a></li>
+          <li><a href="#">Y延边</a></li>
+          <li><a href="#">Y盐城</a></li>
+          <li><a href="#">Y阳江</a></li>
+          <li><a href="#">Y阳泉</a></li>
+          <li><a href="#">Y扬州</a></li>
+          <li><a href="#">Y烟台</a></li>
+          <li><a href="#">Y宜宾</a></li>
+          <li><a href="#">Y宜昌</a></li>
+          <li><a href="#">Y伊犁</a></li>
+          <li><a href="#">Y银川</a></li>
+          <li><a href="#">Y营口</a></li>
+          <li><a href="#">Y鹰潭</a></li>
+          <li><a href="#">Y益阳</a></li>
+          <li><a href="#">Y永州</a></li>
+          <li><a href="#">Y岳阳</a></li>
+          <li><a href="#">Y玉林</a></li>
+          <li><a href="#">Y运城</a></li>
+          <li><a href="#">Y云浮</a></li>
+          <li><a href="#">Y玉树</a></li>
+          <li><a href="#">Y玉溪
+          </a></li>
+          <li><a href="#">Z枣庄</a></li>
+          <li><a href="#">Z张家界</a></li>
+          <li><a href="#">Z张家口</a></li>
+          <li><a href="#">Z张掖</a></li>
+          <li><a href="#">Z漳州</a></li>
+          <li><a href="#">Z湛江</a></li>
+          <li><a href="#">Z肇庆</a></li>
+          <li><a href="#">Z昭通</a></li>
+          <li><a href="#">Z郑州</a></li>
+          <li><a href="#">Z镇江</a></li>
+          <li><a href="#">Z中山</a></li>
+          <li><a href="#">Z中卫</a></li>
+          <li><a href="#">Z周口</a></li>
+          <li><a href="#">Z舟山</a></li>
+          <li><a href="#">Z珠海</a></li>
+          <li><a href="#">Z驻马店</a></li>
+          <li><a href="#">Z株洲</a></li>
+          <li><a href="#">Z淄博</a></li>
+          <li><a href="#">Z自贡</a></li>
+          <li><a href="#">Z资阳</a></li>
+          <li><a href="#">Z台州</a></li>
+          <li><a href="#">Z遵义</a></li>
+        </ul><!-- /listview -->
+    </div><!-- /content -->
+    
+    <div data-role="footer">
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- 任务发布 -->
+<div data-role="page" id="publish-page">
+  <div data-role="header" data-theme="b">
+    <a href="index.html" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-back">返回</a>
+    <h1>发布任务</h1>
+  </div>
+
+  <div class="publish-detail">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">标题</div>
+        <input>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">任务类型</div>
+        <!--input readonly-->
+        <select data-native-menu="false" id="publish-business">
+          <option value="" bind="">请选择父行业</option>
+          <option value="2" bind="model">模特</option>
+          <option value="3" bind="teach">家教</option>
+          <option value="121" bind="service">服务</option>
+          <option value="160" bind="design">设计</option>
+          <option value="192" bind="develop">开发</option>
+          <option value="201" bind="media">影音</option>
+          <option value="211" bind="other">其他</option>
+        </select>
+      </div></div>
+      <div class="ui-btn ui-icon-carat-d ui-btn-icon-right"><div class="input-item">
+        <div class="input-label">执行时间</div>
+        <input type="text" data-role="date" readonly>
+      </div></div>
+      <div class="ui-btn ui-icon-carat-d ui-btn-icon-right"><div class="input-item">
+        <div class="input-label">执行区域</div>
+        <input readonly>
+      </div></div>
+
+      <div class="ui-btn detail-divider"></div>
+
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">按时完成率</div>
+        <select data-native-menu="false">
+          <option value="0" selected="">不限</option>
+          <option value="1">95%~100%</option>
+          <option value="2">85%~95%</option>
+          <option value="3">85%以下</option>
+        </select>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">好评率</div>
+        <select data-native-menu="false">
+          <option value="0" selected="">不限</option>
+          <option value="1">95%~100%</option>
+          <option value="2">85%~95%</option>
+          <option value="3">85%以下</option>
+        </select>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">完成任务数</div>
+        <select data-native-menu="false">
+          <option value="0">不限</option>
+          <option value="1">5个以内</option>
+          <option value="2">5个~20个</option>
+          <option value="3">20个~50个</option>
+          <option value="4">50个以上</option>
+        </select>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">等级</div>
+        <select data-native-menu="false">
+          <option value="0">不限</option>
+          <option value="1">E</option>
+          <option value="2">D</option>
+          <option value="3">C</option>
+          <option value="4">B</option>
+          <option value="5">A</option>
+          <option value="6">S</option>
+        </select>
+      </div></div>
+      
+      <div class="ui-btn detail-divider"></div>
+
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">任务内容</div>
+        <input>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">完成标准</div>
+        <input>
+      </div></div>
+
+      <!-- Dynamic Content -->
+      <div class="ui-btn option model service other"><div class="input-item">
+        <div class="input-label">年龄</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option model"><div class="input-item">
+        <div class="input-label">身高</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option model"><div class="input-item">
+        <div class="input-label">三围</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option model design"><div class="input-item">
+        <div class="input-label">风格</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option design media teach develop service other"><div class="input-item">
+        <div class="input-label">工作情况</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option media"><div class="input-item">
+        <div class="input-label">获奖情况</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option model design teach service other"><div class="input-item">
+        <div class="input-label">性别</div>
+        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+          <input name="gender" id="male" value="1" checked="checked" type="radio">
+          <label for="male">男</label>
+          <input name="gender" id="female" value="2" type="radio">
+          <label for="female">女</label>
+        </fieldset>
+      </div></div>
+
+      <div class="ui-btn option model design media develop other"><div class="input-item">
+        <div class="input-label">经验</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option teach"><div class="input-item">
+        <div class="input-label">教育年限</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option teach"><div class="input-item">
+        <div class="input-label">教育等级</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option teach"><div class="input-item">
+        <div class="input-label">课程</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option teach"><div class="input-item">
+        <div class="input-label">获奖要求</div>
+        <input type="checkbox">
+      </div></div>
+
+      <div class="ui-btn option teach service"><div class="input-item">
+        <div class="input-label">学历</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option develop"><div class="input-item">
+        <div class="input-label">开发年限</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn option develop"><div class="input-item">
+        <div class="input-label">擅长语言</div>
+        <input>
+      </div></div>
+
+      <div class="ui-btn detail-divider"></div>
+
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">支付费用</div>
+        <input>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">是否公开</div>
+        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+          <input name="txt_task_open" id="txt_task_open_1" value="1" checked="checked" type="radio">
+          <label for="txt_task_open_1">公开</label>
+          <input name="txt_task_open" id="txt_task_open_2" value="2" type="radio">
+          <label for="txt_task_open_2">半公开</label>
+          <input name="txt_task_open" id="txt_task_open_3" value="3" type="radio">
+          <label for="txt_task_open_3">不公开</label>
+        </fieldset>
+      </div></div>
+    </div>
+    <div class="main-btn ui-btn ui-corner-all">发布任务</div>
+  </div>
+
+  <!--div class="foot-navbar">
+    <div data-role="footer" class="" data-theme="a">
+      <div data-role="navbar" class="navbar" data-grid="c">
+        <ul>
+            <li><a href="index.html" id="category" data-icon="home">首页</a></li>
+            <li><a href="nearby.html" id="near" data-icon="location">附近</a></li>
+            <li><a href="#" id="publish" data-icon="cloud" class="ui-btn-active">发布</a></li>
+            <li><a href="user_center.html" id="individual" data-icon="user">个人中心</a></li>
+        </ul>
+      </div>
+    </div>
+  </div-->
+</div><!-- /page -->
+
+<!-- 个人中心 -->
+<div data-role="page" id="user-center-page">
+  <div data-role="header" data-theme="b" data-position="fixed">
+		<h1>个人中心</h1>
+		<a href="#" data-rel="back" data-icon="arrow-l">返回</a>
+	</div><!-- /header -->
+
+  <div class="user-info-signin">
+    <a href="#signin-page" class="ui-btn ui-corner-all">登陆</a>
+  </div>
+  
+  <div class="user-info" style="display:none;">
+    <div class="user-info-logo">
+     <div class="user-info-image"></div>
+    </div>
+    <div class="user-info-txt">
+      <div class="user-info-name">会员名</div>
+      <div class="user-cert">身份认证</div>
+      <div class="company-cert">公司认证</div>
+    </div>
+  </div>
+  
+  <div class="ui-grid-a">
+    <div class="ui-block-a tasks-entry" list-type="pay" href="#pay-tasks-page">
+      <div class="ui-bar category-btn">代付款</div>
+    </div>
+    <div class="ui-block-b tasks-entry" list-type="execute" href="#exec-tasks-page">
+      <div class="ui-bar category-btn">待执行</div>
+    </div>
+    <div class="ui-block-a tasks-entry" list-type="confirm" href="#confirm-tasks-page">
+      <div class="ui-bar category-btn">待确认</div>
+    </div>
+    <div class="ui-block-b tasks-entry" list-type="cancel" href="#cancel-tasks-page">
+      <div class="ui-bar category-btn">退款/投诉</div>
+    </div>
+    <div class="ui-block-a tasks-entry" list-type="comment" href="#comment-tasks-page">
+      <div class="ui-bar category-btn">待评价</div>
+    </div>
+    <div class="ui-block-b tasks-entry" href="#design">
+      <div class="ui-bar category-btn">消息</div>
+    </div>
+  </div><!-- /grid-c -->
+
+  <div style="height:25px;"></div>
+
+  <div class="ui-grid-a">
+    <div class="ui-block-a tasks-entry" list-type="all" href="#all-tasks-page">
+      <div class="ui-bar category-btn">我的任务</div>
+    </div>
+    <div class="ui-block-b tasks-entry" href="#server">
+      <div class="ui-bar category-btn">我的收藏</div>
+    </div>
+  </div><!-- /grid-c -->
+
+  <div style="height:25px;"></div>
+
+  <div class="help tasks-entry">搭赁网</div>
+
+  <div data-role="footer" class="" data-theme="a" data-position="fixed">
+    <div data-role="navbar" class="navbar" data-grid="c">
+      <ul>
+          <li><a href="#home-page" id="category" data-icon="home">首页</a></li>
+          <li><a href="#tasks-page" id="near" data-icon="location" category="nearby">附近</a></li>
+          <li><a href="#publish-page" id="publish" data-icon="cloud">发布</a></li>
+          <li><a href="#" id="individual" data-icon="user" class="ui-btn-active">个人中心</a></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 登陆 -->
+<div data-role="page" id="signin-page">
+  <div data-role="header" data-theme="b">
+    <h1>登陆账号</h1>
+    <a href="#" data-rel="back">取消</a>
+    <a href="#phone-reg-page" class="ui-btn-right">注册</a>
+  </div>
+
+  <div role="main" class="ui-content">
+    <form id="signin-form">
+      <div data-role="controlgroup" class="input-group">
+        <div class="ui-btn"><div class="input-item">
+          <div class="input-label">用户名</div>
+          <input name="account" value="">
+        </div></div>
+        <div class="ui-btn"><div class="input-item">
+          <div class="input-label">密码</div>
+          <input type="password" name="password" value="">
+        </div></div>
+      </div>
+    </form>
+    <input id="record_psw" checked="" type="checkbox">
+    <label for="record_psw">记住密码</label>
+    <button class="ui-btn ui-btn-b" id="signin-btn">登陆</button>
+  </div>
+
+  
+  
+  <!--div role="main" class="ui-content">
+    <form id="signin-form">
+      <input type="text" data-clear-btn="true" name="account" placeholder="用户名" value="">
+      <input type="password" data-clear-btn="true" name="password" placeholder="密码" value="">
+    </form>
+    <input id="record_psw" checked="" type="checkbox">
+    <label for="record_psw">记住密码</label>
+    <button class="ui-btn ui-btn-b" id="signin-btn">立即登陆</button>
+	</div--><!-- /content -->
+
+  <div data-role="popup" id="signin_dlg" data-overlay-theme="b" data-theme="a" data-dismissible="false">
+    <div data-role="header" data-theme="b">
+      <h1 class="signin-info signin-wait">登陆中...</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <div class="signin-info signin-wait spinner"></div>
+        <!--p>This action cannot be undone.</p-->
+    </div>
+  </div>
+  
+  <div data-role="popup" id="signin_fail_dlg" data-overlay-theme="b" data-theme="a" data-dismissible="false" style="min-width:200px;max-width:300px">
+    <div data-role="header" data-theme="b">
+      <h1 class="signin-info signin-fail">登陆失败</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <h3 class="signin-info signin-fail ui-title" id="signin_fail_info">Error</h3>
+        <!--p>This action cannot be undone.</p-->
+        <a href="#" class="signin-info signin-fail ui-btn ui-corner-all ui-shadow ui-btn-a" data-rel="back">关闭</a>
+    </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 注册 -->
+<div data-role="page" id="phone-reg-page">
+  <div data-role="header" data-theme="b">
+    <h1>手机注册</h1>
+    <a  href="#" data-rel="back">返回</a>
+  </div>
+
+  <div role="main" class="ui-content">
+      <input type="tel" data-clear-btn="true" name="tel" id="tel" placeholder="手机号码" value="">
+        <button id="code_btn">获取验证码</button>
+      </input>
+      <!--div data-role="controlgroup" data-type="horizontal">
+        <input type="text" name="valicode" id="valicode" placeholder="验证码" value="" data-wrapper-class="controlgroup-textinput ui-btn">
+        <button>获取验证码</button>
+      </div-->
+      <input type="text"  data-clear-btn="true" name="valicode" id="valicode" placeholder="验证码" value="">
+      <input type="password" data-clear-btn="true" name="pswd" id="pswd" placeholder="密码" value="">
+      <button class="ui-btn ui-btn-b">立即注册</button>
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<!-- 任务列表 -->
+<div data-role="page" id="tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed">
+    <h1>任务列表</h1>
+    <a href="#" data-rel="back">取消</a>
+    <div class="ui-alt-icon ui-nodisc-icon filter-bar">
+      <div class="ui-block-a" href="#model">
+        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">类型</div>
+      </div>
+      <div class="ui-block-b" href="#teach">
+        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">执行时间</div>
+      </div>
+      <div class="ui-block-c" href="#teach">
+        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">地区</div>
+      </div>
+      <div class="ui-block-c" href="#teach">
+        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">金额</div>
+      </div>
+    </div>
+  </div>
+    
+  <div class="publish-detail">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+  
+  
+  
+  
+    <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+      <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+        <li data-icon="home"><a href=".././">Home</a></li>
+        <li><a href="../intro/" data-ajax="false">Introduction</a></li>
+        <li><a href="../button-markup/" data-ajax="false">Buttons</a></li>
+        <li><a href="../button/" data-ajax="false">Button widget</a></li>
+        <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+          <h3>Checkboxradio widget</h3>
+          <ul>
+            <li><a href="../checkboxradio-checkbox/" data-ajax="false">Checkboxes</a></li>
+            <li><a href="../checkboxradio-radio/" data-ajax="false">Radio buttons</a></li>
+          </ul>
+        </li>
+        <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+          <h3>Collapsible (set) widget</h3>
+          <ul>
+            <li><a href="../collapsible/" data-ajax="false">Collapsible</a></li>
+            <li><a href="../collapsible-dynamic/" data-ajax="false">Dynamic collapsibles</a></li>
+            <li><a href="../collapsibleset/" data-ajax="false">Collapsible set</a></li>
+          </ul>
+        </li>
+        <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+          <h3>Controlgroup widget</h3>
+          <ul>
+            <li><a href="../controlgroup/" data-ajax="false">Controlgroup</a></li>
+            <li><a href="../controlgroup-dynamic/" data-ajax="false">Dynamic controlgroups</a></li>
+          </ul>
+        </li>
+        <li><a href="../datepicker/" data-ajax="false">Datepicker</a></li>
+        <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+          <h3>Events</h3>
+          <ul>
+            <li><a href="../swipe-list/" data-ajax="false">Swipe list items</a></li>
+            <li><a href="../swipe-page/" data-ajax="false">Swipe page navigation</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /panel -->
+    
+</div><!-- /page -->
+
+<!-- 待付款任务 -->
+<div data-role="page" id="pay-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed">
+    <h1>待付款任务</h1>
+    <a href="#" data-rel="back">取消</a>
+  </div>
+
+  <div class="publish-detail">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 待执行任务 -->
+<div data-role="page" id="exec-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed">
+    <h1>待执行任务</h1>
+    <a href="#" data-rel="back">取消</a>
+  </div>
+
+  <div class="publish-detail">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 待确认任务 -->
+<div data-role="page" id="confirm-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed">
+    <h1>待确认任务</h1>
+    <a href="#" data-rel="back">取消</a>
+  </div>
+
+  <div class="publish-detail">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 待评价任务 -->
+<div data-role="page" id="comment-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed">
+    <h1>待评价任务</h1>
+    <a href="#" data-rel="back">取消</a>
+  </div>
+
+  <div class="publish-detail">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 我的任务 -->
+<div data-role="page" id="all-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed">
+    <h1>我的任务</h1>
+    <a href="#" data-rel="back">取消</a>
+  </div>
+
+  <div class="publish-detail">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-list-detail">
+          <div class="task-list-zone">地区</div>
+          <div class="task-list-pay">金额</div>
+          <div class="task-list-pubtime">发布时间</div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div><!-- /page -->
+
+</body>
+</html>

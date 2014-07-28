@@ -1,0 +1,417 @@
+.ui-page-theme-a {
+  background-color: #fff;
+}
+
+.ui-header{
+  background-color: #2D529C;
+  border: 0;
+}
+
+/*.foot-navbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}*/
+
+.adv-bar{
+  background-image: url(http://www.website120.com/data/uploads/sys/ad/102073106153859bbc10d58.gif);
+  background-size: cover;
+  height: 148px;
+}
+
+.main-btn-group{
+  background-color: #eee;
+}
+
+.main-btn-group>div{
+  padding: 30px 15px;
+}
+
+#earn_btn{
+  background-color: #2D529C;
+  color: #fff;
+  text-shadow: 0 1px 0 #059;
+}
+
+#earn_btn:active{
+  background-color: #123B81;
+}
+
+#requirment_btn{
+  background-color: #E3620C;
+  color: #fff;
+  text-shadow: 0 1px 0 #059;
+}
+
+#requirment_btn:active{
+  background-color: #A73E04;
+}
+
+.home-btn-group {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 58px;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.home-btn-group>div>a {
+  padding: 0 8px;
+  color: #444;
+  text-decoration: initial;
+}
+
+.home-btn-group .btn-img {
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.home-btn-group .category-btn{
+  /*height: 110px;*/
+  text-align: center;
+  margin: 0 auto;
+  width:60px;
+  color: #000;
+  padding: .4em 0em;
+}
+
+.controlgroup-textinput{
+    padding-top:.22em;
+    padding-bottom:.22em;
+}
+
+.spinner {
+  background: url('../image/loading.jpg') no-repeat center;
+  height: 100px;
+}
+
+div.ui-checkbox>label.ui-btn {
+  border-style: none;
+  background-color: #fff;
+}
+div.ui-checkbox>label.ui-btn:hover {
+  background-color: #fff;
+}
+
+#signin_dlg{
+  min-width:200px;
+  max-width:400px;
+}
+
+#code_btn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+  height: 35px;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* 发布任务 */
+.publish-detail {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.ui-controlgroup-controls>.ui-btn {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  padding: 8px 0;
+}
+.ui-controlgroup-controls>.ui-btn:hover{
+  background-color: #fff;
+}
+.input-group .ui-btn .input-item{
+  width:100%;
+  display: inline-block;
+  margin: 0;
+}
+.input-group .ui-btn  .input-item .input-label{
+  width: 22%;
+  text-align: left;
+  border-right: #ccc solid 1px;
+  display: inline-block;
+  padding: 10px;
+}
+.input-group .ui-btn  .input-item .ui-input-text,.input-group .ui-btn .input-item .ui-select,.input-group .ui-btn .input-item .ui-checkbox{
+  width: 70%;
+  display: inline-block;
+  margin: 0;
+  padding: 0 0 5px 0;
+  border: 0;
+  box-shadow: none;
+  vertical-align: middle;
+}
+.input-group .ui-btn .input-item .ui-select>a{
+  padding: 0;
+  border: 0;
+  height: 24px;
+  background-color: #fff;
+  color: #000;
+  text-shadow: 0 0 0 #fff; 
+}
+.input-group .ui-btn .input-item .ui-select>a:focus{
+  box-shadow: 0 0 0 #fff;
+}
+.input-group .ui-btn .input-item .ui-select>a>span{
+  text-align: left;
+  background-color: #fff;
+  font-weight: normal;
+}
+.input-group .ui-btn  .input-item>fieldset{
+  width: 70%;
+  display: inline-block;
+  text-align: left;
+}
+.input-group .ui-input-text input{
+  overflow: hidden;
+  padding: 0;
+}
+
+.input-group .detail-divider{
+  height: 20px;
+  border: 0;
+  background-color: #eee;
+}
+.input-group .detail-divider:hover{
+  background-color: #eee;
+}
+.input-group>.ui-controlgroup-controls>.ui-btn{
+  border-bottom-width: 0;
+}
+.publish-detail>.ui-btn{
+  margin:20px;
+}
+.publish-detail>.ui-btn:hover{
+  margin:20px;
+}
+.publish-detail>.ui-btn,#signin-btn,#user-center-page>.user-info-signin>.ui-btn{
+  background-color: #2D529C;
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px 0 #059;
+}
+.publish-detail>.ui-btn:hover,#signin-btn:hover,#user-center-page>.user-info-signin>.ui-btn:hover{
+  background-color: #2D529C;
+  color: #fff;
+  text-shadow: 0 1px 0 #059;
+}
+.publish-detail>.ui-btn:active,#signin-btn:active,#user-center-page>.user-info-signin>.ui-btn:active{
+  background-color: #123B81;
+}
+
+/* 城市列表 */
+#sorter li {
+	height: 3.8%;
+	padding: 0;
+	font-size: 8px;
+	padding-left: 5px;
+	line-height: 1.8em;
+	text-align: left;
+}
+#sorter li span {
+	margin-top: 8%;
+	display: block;
+}
+#sorter{
+	position: fixed;
+	top: 60px;
+	right: 0;
+	width: 20px;
+	z-index: 1;
+}
+#sorter ul{
+	height: 100%;
+}
+#cities-page .ui-btn-icon-right:after{
+  display:none;
+}
+
+/* 个人中心 */
+#user-center-page>.user-info-signin {
+  height:120px;
+  display: -webkit-box;
+  -webkit-box-align: center;
+}
+#user-center-page>.user-info-signin>.ui-btn{
+  width: 160px;
+  margin: 0 auto;
+}
+#user-center-page>.user-info{
+  height:120px;
+  width: 100%;
+  display: inline-block;
+}
+#user-center-page>.user-info>.user-info-logo{
+  width:30%;
+  height: 100%;
+  position: relative;
+  display: inline-block;
+}
+#user-center-page .user-info-image{
+  position: absolute;
+  background-image: url(http://www.website120.com/data/avatar/default/man_big.jpg);
+  background-size: cover;
+  top: 15px;
+  left: 15px;
+  width: 90px;
+  height: 90px;
+}
+#user-center-page>.user-info>.user-info-txt{
+  width: 60%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+}
+#user-center-page .user-info-name{
+  position: absolute;
+  top: 40px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+#user-center-page .user-cert{
+  position: absolute;
+  top: 78px;
+  left: 4px;
+  font-weight: bold;
+  color: #3B5DA1;
+}
+#user-center-page .company-cert{
+  position: absolute;
+  top: 78px;
+  left: 84px;
+  font-weight: bold;
+  color: #3B5DA1;
+}
+#user-center-page>.ui-grid-a,#user-center-page>.help{
+  border-top: 1px solid #aaa;
+}
+#user-center-page>.ui-grid-a>div,#user-center-page>.help{
+  border-bottom: 1px solid #aaa;
+  height: 60px;
+  line-height: 60px;
+}
+#user-center-page>.ui-grid-a>.ui-block-a{
+  border-right: 1px solid #aaa;
+}
+#user-center-page>.ui-grid-a>div>div,#user-center-page>.help{
+  text-align: left;
+  padding: 0 0 0 20px;
+  font-weight: bold;
+  /*color: #888;*/
+}
+#user-center-page .tasks-entry:active{
+  background-color: #d0d0d0;
+}
+
+/* 任务列表 */
+.jqm-navmenu-panel .ui-listview > li .ui-collapsible-heading {
+	margin: 0;
+}
+.jqm-navmenu-panel .ui-collapsible.ui-li-static {
+	padding: 0;
+	border: none !important;
+}
+.jqm-navmenu-panel .ui-collapsible + li > .ui-btn,
+.jqm-navmenu-panel .ui-collapsible + .ui-collapsible > .ui-collapsible-heading > .ui-btn,
+.jqm-navmenu-panel .ui-panel-inner > .ui-listview > li.ui-first-child .ui-btn {
+	border-top: none !important;
+}
+.jqm-navmenu-panel .ui-listview .ui-listview .ui-btn {
+	padding-left: 1.5em;
+	color: #999;
+}
+.jqm-navmenu-panel .ui-listview .ui-listview .ui-btn.ui-btn-active {
+	color: #fff;
+}
+.jqm-navmenu-panel .ui-btn:after {
+	opacity: .4;
+	filter: Alpha(Opacity=40);
+}
+.jqm-navmenu-panel.jqm-panel-page-nav {
+	display: none;
+	position: absolute;
+	top: 178px;
+	left: 12px;
+}
+.jqm-navmenu-panel.jqm-panel-page-nav ul li:first-child a{
+	border-top: none;
+}
+
+.filter-bar{
+  height: 35px;
+}
+html .ui-bar-b .ui-btn{
+  background-color: #eee;
+  color: #000;
+  text-shadow: 0 0 0;
+  font-weight: normal;
+  border: 0;
+  border-right: 1px solid;
+}
+html .ui-bar-b .ui-btn:hover{
+  background-color: #eee;
+  color: #000;
+  text-shadow: 0 0 0;
+}
+html .ui-bar-b .ui-btn:active{
+  background-color: #ccc;
+}
+
+[class*=ui-block-]>.ui-btn{
+  margin: 0;
+  background-color: #ddd;
+}
+#tasks-page .publish-detail{
+  top:70px;
+}
+#tasks-page .input-item{
+  height:50px;
+  text-align:left;
+}
+#tasks-page .ui-controlgroup-controls>div:active{
+  background-color: #ddd;
+}
+#tasks-page .task-list-title{
+  width:100%;
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom:10px;
+}
+#tasks-page .task-list-detail{
+  width:100%;
+  display: inline-block;
+  font-weight: normal;
+}
+#tasks-page .task-list-zone{
+  width:30%;
+  text-align: left;
+  margin-left: 20px;
+  display: inline-block;
+}
+#tasks-page .task-list-pay{
+  width:30%;
+  text-align: left;
+  display: inline-block;
+}
+#tasks-page .task-list-pubtime{
+  width:40%;
+  text-align: left;
+  display: inline-block;
+}
