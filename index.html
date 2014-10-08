@@ -4,12 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>首页</title>
-	<link rel="stylesheet"  href="lib/jquery.mobile-1.4.3/jquery.mobile-1.4.3.min.css">
+	<link rel="stylesheet"  href="lib/jquery.mobile-1.4.3/jquery.mobile-1.4.3.css">
   <link rel="stylesheet" href="lib/jquery.mobile.datepicker/jquery.mobile.datepicker.css" />
   <link rel="stylesheet"  href="css/app.css">
 	<script src="lib/jquery.js"></script>
   <script src="lib/jquery.ui.datepicker.js"></script>
-	<script src="lib/jquery.mobile-1.4.3/jquery.mobile-1.4.3.min.js"></script>
+	<script src="lib/jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
   <script src="lib/jquery.mobile.datepicker/jquery.mobile.datepicker.js"></script>
   <!--script src="lib/jquery-cookie.js"></script-->
   <script src="js/main.js"></script>
@@ -18,8 +18,8 @@
 
 <!-- 首页 -->
 <div data-role="page" class="" id="home-page">
-  <div data-role="header" data-theme="b" data-position="fixed">
-    <a href="#cities-page" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-location">杭州</a>
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn" data-tap-toggle="false">
+    <a href="#cities-page" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-btn-icon-right ui-icon-carat-d" id="home_city">杭州</a>
     <h1>首页</h1>
   </div>
 
@@ -60,14 +60,14 @@
         <div class="btn-img" style="background-image: url(image/home/other.gif)"></div>
         <div class="ui-bar category-btn">其他</div>
       </a>
-      <a class="ui-block-d" href="#tasks-page" category="server">
+      <a class="ui-block-d" href="#server-info-page">
         <div class="btn-img" style="background-image: url(image/home/server.gif)"></div>
         <div class="ui-bar category-btn">服务方</div>
       </a>
     </div><!-- /grid-c -->
   </div>
 
-  <div data-role="footer" class="" data-theme="a" data-position="fixed">
+  <div data-role="footer" class="" data-theme="a" data-position="fixed" data-tap-toggle="false">
     <div data-role="navbar" class="navbar" data-grid="c">
       <ul>
           <li><a href="#" id="category" data-icon="home" class="ui-btn-active">首页</a></li>
@@ -82,9 +82,9 @@
 <!-- 城市 -->
 <div data-role="page" id="cities-page">
 
-	<div data-role="header">
+	<div data-role="header" data-theme="b" class="header-btn" data-position="fixed" data-tap-toggle="false">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
 		<h1>城市列表</h1>
-		<a href="#" data-rel="back" data-icon="arrow-l">取消</a>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
@@ -514,28 +514,36 @@
           <li><a href="#">Z遵义</a></li>
         </ul><!-- /listview -->
     </div><!-- /content -->
-    
-    <div data-role="footer">
-    </div><!-- /footer -->
 </div><!-- /page -->
+
+<!-- 县级城市 -->
+<div data-role="page" id="sub_city_page">
+  <div data-role="header" data-theme="b" class="header-btn" data-position="fixed">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>城市列表</h1>
+  </div><!-- /header -->
+
+  <ul data-role="listview" data-inset="true" id="sub_city_list">
+  </ul>
+</div>
 
 <!-- 任务发布 -->
 <div data-role="page" id="publish-page">
-  <div data-role="header" data-theme="b">
-    <a href="index.html" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-back">返回</a>
+  <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
     <h1>发布任务</h1>
   </div>
 
-  <div class="publish-detail">
-    <div data-role="controlgroup" class="input-group">
+  <!--<div class="publish-detail ui-alt-icon">-->
+    <div data-role="controlgroup" class="input-group ui-alt-icon">
       <div class="ui-btn"><div class="input-item">
         <div class="input-label">标题</div>
-        <input>
+        <input id="publish-title">
       </div></div>
       <div class="ui-btn"><div class="input-item">
         <div class="input-label">任务类型</div>
         <!--input readonly-->
-        <select data-native-menu="false" id="publish-business">
+        <select data-native-menu="false" id="publish-business" id="publish-type">
           <option value="" bind="">请选择父行业</option>
           <option value="2" bind="model">模特</option>
           <option value="3" bind="teach">家教</option>
@@ -548,18 +556,18 @@
       </div></div>
       <div class="ui-btn ui-icon-carat-d ui-btn-icon-right"><div class="input-item">
         <div class="input-label">执行时间</div>
-        <input type="text" data-role="date" readonly>
+        <input type="text" data-role="date" readonly id="publish-exec_date">
       </div></div>
       <div class="ui-btn ui-icon-carat-d ui-btn-icon-right"><div class="input-item">
         <div class="input-label">执行区域</div>
-        <input readonly>
+        <input readonly id="publish-exec_zone">
       </div></div>
 
       <div class="ui-btn detail-divider"></div>
 
       <div class="ui-btn"><div class="input-item">
         <div class="input-label">按时完成率</div>
-        <select data-native-menu="false">
+        <select data-native-menu="false" id="publish-complete_rate">
           <option value="0" selected="">不限</option>
           <option value="1">95%~100%</option>
           <option value="2">85%~95%</option>
@@ -568,7 +576,7 @@
       </div></div>
       <div class="ui-btn"><div class="input-item">
         <div class="input-label">好评率</div>
-        <select data-native-menu="false">
+        <select data-native-menu="false"id="publish-good_rate">
           <option value="0" selected="">不限</option>
           <option value="1">95%~100%</option>
           <option value="2">85%~95%</option>
@@ -577,7 +585,7 @@
       </div></div>
       <div class="ui-btn"><div class="input-item">
         <div class="input-label">完成任务数</div>
-        <select data-native-menu="false">
+        <select data-native-menu="false"id="publish-complete_num">
           <option value="0">不限</option>
           <option value="1">5个以内</option>
           <option value="2">5个~20个</option>
@@ -587,7 +595,7 @@
       </div></div>
       <div class="ui-btn"><div class="input-item">
         <div class="input-label">等级</div>
-        <select data-native-menu="false">
+        <select data-native-menu="false"id="publish-rank">
           <option value="0">不限</option>
           <option value="1">E</option>
           <option value="2">D</option>
@@ -602,42 +610,42 @@
 
       <div class="ui-btn"><div class="input-item">
         <div class="input-label">任务内容</div>
-        <input>
+        <input id="publish-task">
       </div></div>
       <div class="ui-btn"><div class="input-item">
         <div class="input-label">完成标准</div>
-        <input>
+        <input id="publish-compelete_standard">
       </div></div>
 
       <!-- Dynamic Content -->
       <div class="ui-btn option model service other"><div class="input-item">
         <div class="input-label">年龄</div>
-        <input>
+        <input id="publish-age">
       </div></div>
 
       <div class="ui-btn option model"><div class="input-item">
         <div class="input-label">身高</div>
-        <input>
+        <input id="publish-height">
       </div></div>
 
       <div class="ui-btn option model"><div class="input-item">
         <div class="input-label">三围</div>
-        <input>
+        <input id="publish-vital_statistics">
       </div></div>
 
       <div class="ui-btn option model design"><div class="input-item">
         <div class="input-label">风格</div>
-        <input>
+        <input id="publish-style">
       </div></div>
 
       <div class="ui-btn option design media teach develop service other"><div class="input-item">
         <div class="input-label">工作情况</div>
-        <input>
+        <input id="publish-work_experience">
       </div></div>
 
       <div class="ui-btn option media"><div class="input-item">
         <div class="input-label">获奖情况</div>
-        <input>
+        <input id="publish-prize">
       </div></div>
 
       <div class="ui-btn option model design teach service other"><div class="input-item">
@@ -652,49 +660,49 @@
 
       <div class="ui-btn option model design media develop other"><div class="input-item">
         <div class="input-label">经验</div>
-        <input>
+        <input  id="publish-experience">
       </div></div>
 
       <div class="ui-btn option teach"><div class="input-item">
         <div class="input-label">教育年限</div>
-        <input>
+        <input id="publish-teach_time">
       </div></div>
 
       <div class="ui-btn option teach"><div class="input-item">
         <div class="input-label">教育等级</div>
-        <input>
+        <input id="publish-teach_rank">
       </div></div>
 
       <div class="ui-btn option teach"><div class="input-item">
         <div class="input-label">课程</div>
-        <input>
+        <input id="publish-class">
       </div></div>
 
       <div class="ui-btn option teach"><div class="input-item">
         <div class="input-label">获奖要求</div>
-        <input type="checkbox">
+        <input type="checkbox" id="publish-prize_required">
       </div></div>
 
       <div class="ui-btn option teach service"><div class="input-item">
         <div class="input-label">学历</div>
-        <input>
+        <input id="publish-school_experience">
       </div></div>
 
       <div class="ui-btn option develop"><div class="input-item">
         <div class="input-label">开发年限</div>
-        <input>
+        <input id="publish-dev_age">
       </div></div>
 
       <div class="ui-btn option develop"><div class="input-item">
         <div class="input-label">擅长语言</div>
-        <input>
+        <input id="publish-dev_lang">
       </div></div>
 
       <div class="ui-btn detail-divider"></div>
 
       <div class="ui-btn"><div class="input-item">
         <div class="input-label">支付费用</div>
-        <input>
+        <input id="publish-payment">
       </div></div>
       <div class="ui-btn"><div class="input-item">
         <div class="input-label">是否公开</div>
@@ -708,8 +716,8 @@
         </fieldset>
       </div></div>
     </div>
-    <div class="main-btn ui-btn ui-corner-all">发布任务</div>
-  </div>
+    <div class="main-btn ui-btn ui-corner-all" id="publish-btn">发布任务</div>
+  <!--</div>-->
 
   <!--div class="foot-navbar">
     <div data-role="footer" class="" data-theme="a">
@@ -727,16 +735,16 @@
 
 <!-- 个人中心 -->
 <div data-role="page" id="user-center-page">
-  <div data-role="header" data-theme="b" data-position="fixed">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
 		<h1>个人中心</h1>
-		<a href="#" data-rel="back" data-icon="arrow-l">返回</a>
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
 	</div><!-- /header -->
 
   <div class="user-info-signin">
     <a href="#signin-page" class="ui-btn ui-corner-all">登陆</a>
   </div>
   
-  <div class="user-info" style="display:none;">
+  <div class="user-info" style="display:none;" href="#account-page">
     <div class="user-info-logo">
      <div class="user-info-image"></div>
     </div>
@@ -763,23 +771,23 @@
     <div class="ui-block-a tasks-entry" list-type="comment" href="#comment-tasks-page">
       <div class="ui-bar category-btn">待评价</div>
     </div>
-    <div class="ui-block-b tasks-entry" href="#design">
+    <div class="ui-block-b tasks-entry" list-type href="#message-list-page">
       <div class="ui-bar category-btn">消息</div>
     </div>
   </div><!-- /grid-c -->
 
-  <div style="height:25px;"></div>
+  <div style="height:18px;"></div>
 
   <div class="ui-grid-a">
     <div class="ui-block-a tasks-entry" list-type="all" href="#all-tasks-page">
       <div class="ui-bar category-btn">我的任务</div>
     </div>
-    <div class="ui-block-b tasks-entry" href="#server">
+    <div class="ui-block-b tasks-entry my-fav-page" href="#my-fav-page">
       <div class="ui-bar category-btn">我的收藏</div>
     </div>
   </div><!-- /grid-c -->
 
-  <div style="height:25px;"></div>
+  <div style="height:18px;"></div>
 
   <div class="help tasks-entry">搭赁网</div>
 
@@ -795,12 +803,84 @@
   </div>
 </div><!-- /page -->
 
+<!-- 账号 -->
+<div data-role="page" id="account-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>账号</h1>
+  </div><!-- /header -->
+  <div class="publish-detail ui-alt-icon">
+    <div data-role="listview" class="input-group">
+      <li><a href="#edit-account-page">头&emsp;&emsp;像</a></li>
+      <li><a href="#">我的资料</a></li>
+    </div>
+    <div class="cert-label">认证体系</div>
+    <div data-role="listview" class="input-group">
+      <li><a href="#real-name-auth-page">实名认证</a></li>
+      <li><a href="#company-auth-page">企业认证</a></li>
+    </div>
+    <button class="ui-btn ui-shadow" id="exit-account-btn">退出账号</button>
+  </div>
+</div><!-- /page -->
+
+<!-- 编辑资料 -->
+<div data-role="page" id="edit-account-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>编辑资料</h1>
+  </div><!-- /header -->
+  <!--div class="publish-detail ui-alt-icon">
+
+  </div-->
+  <div class="user-edit-1">
+    <div class="top-left-col">
+      <div class="user-avatar"></div>
+      <div class="user-age">24</div>
+      <div class="user-city">杭州滨江</div>
+    </div>
+    <div class="top-right-col">
+      <div class="user-name">会员名</div>
+      <div class="top-right-col-row-1">
+        <div class="row-left">等级:<span>A</span></div>
+        <div class="row-right">按时完成率:<span>85%</span></div>
+      </div>
+      <div class="top-right-col-row-2">
+        <div class="row-left">好评率:<span>85%</span></div>
+        <div class="row-right">完成任务数:<span>50个以上</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="user-edit-divider"></div>
+  <div class="user-edit-2">
+    <label for="introduction">简介</label>
+    <textarea cols="40" rows="8" name="introduction" id="introduction"></textarea>
+    <label>个人相册</label>
+    <div class="image-list">
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="btn-add-image"></div>
+    </div>
+    <!--<textarea cols="40" rows="8" name="pictures" id="pictures"></textarea>-->
+    <label for="video">视频展示</label>
+    <video controls id="video" name="video"></video>
+  </div>
+  <div class="user-edit-divider"></div>
+  <div class="user-edit-3">
+    <label for="description">自我描述</label>
+    <textarea cols="40" rows="8" name="description" id="description"></textarea>
+  </div>
+</div><!-- /page -->
+
 <!-- 登陆 -->
 <div data-role="page" id="signin-page">
-  <div data-role="header" data-theme="b">
+  <div data-role="header" data-theme="b" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
     <h1>登陆账号</h1>
-    <a href="#" data-rel="back">取消</a>
-    <a href="#phone-reg-page" class="ui-btn-right">注册</a>
+    <a href="#phone-reg-page" class="ui-btn-right ui-btn reg-btn">注册</a>
   </div>
 
   <div role="main" class="ui-content">
@@ -834,7 +914,7 @@
 	</div--><!-- /content -->
 
   <div data-role="popup" id="signin_dlg" data-overlay-theme="b" data-theme="a" data-dismissible="false">
-    <div data-role="header" data-theme="b">
+    <div data-role="header" data-theme="b" class="header-btn ui-alt-icon">
       <h1 class="signin-info signin-wait">登陆中...</h1>
     </div>
     <div role="main" class="ui-content">
@@ -844,7 +924,7 @@
   </div>
   
   <div data-role="popup" id="signin_fail_dlg" data-overlay-theme="b" data-theme="a" data-dismissible="false" style="min-width:200px;max-width:300px">
-    <div data-role="header" data-theme="b">
+    <div data-role="header" data-theme="b" class="header-btn ui-alt-icon">
       <h1 class="signin-info signin-fail">登陆失败</h1>
     </div>
     <div role="main" class="ui-content">
@@ -857,9 +937,9 @@
 
 <!-- 注册 -->
 <div data-role="page" id="phone-reg-page">
-  <div data-role="header" data-theme="b">
+  <div data-role="header" data-theme="b" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
     <h1>手机注册</h1>
-    <a  href="#" data-rel="back">返回</a>
   </div>
 
   <div role="main" class="ui-content">
@@ -878,27 +958,41 @@
 
 <!-- 任务列表 -->
 <div data-role="page" id="tasks-page">
-  <div data-role="header" data-theme="b" data-position="fixed">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
     <h1>任务列表</h1>
-    <a href="#" data-rel="back">取消</a>
     <div class="ui-alt-icon ui-nodisc-icon filter-bar">
-      <div class="ui-block-a" href="#model">
+      <div class="ui-block-a" id="tasks-type">
         <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">类型</div>
       </div>
       <div class="ui-block-b" href="#teach">
-        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">执行时间</div>
+        <!--div class="ui-btn ui-btn-icon-right ui-icon-carat-d">执行时间</div-->
+        <select data-native-menu="false">
+          <option value="0" selected="">执行时间</option>
+          <option value="1">当天</option>
+          <option value="2">3天内</option>
+          <option value="3">3~7天</option>
+          <option value="3">7天以上</option>
+        </select>
       </div>
       <div class="ui-block-c" href="#teach">
-        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">地区</div>
+        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d" id="task_zone_filter">地区</div>
       </div>
       <div class="ui-block-c" href="#teach">
-        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">金额</div>
+        <!--div class="ui-btn ui-btn-icon-right ui-icon-carat-d">金额</div-->
+        <select data-native-menu="false">
+          <option value="-1" selected="">金额</option>
+          <option value="0">0元</option>
+          <option value="1">0~100元</option>
+          <option value="2">100~500元</option>
+          <option value="3">500元以上</option>
+        </select>
       </div>
     </div>
   </div>
     
-  <div class="publish-detail">
-    <div data-role="controlgroup" class="input-group">
+  <!--<div class="publish-detail">-->
+    <div data-role="controlgroup" class="input-group" id="task-list-view">
       <div class="ui-btn"><div class="input-item">
         <div class="task-list-title">标题</div>
         <div class="task-list-detail">
@@ -1006,45 +1100,79 @@
         </div>
       </div></div>
     </div>
-  </div>
+  <!--</div>-->
   
   
   
   
     <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
       <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
-        <li data-icon="home"><a href=".././">Home</a></li>
-        <li><a href="../intro/" data-ajax="false">Introduction</a></li>
-        <li><a href="../button-markup/" data-ajax="false">Buttons</a></li>
-        <li><a href="../button/" data-ajax="false">Button widget</a></li>
         <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
-          <h3>Checkboxradio widget</h3>
+          <h3>模特</h3>
           <ul>
-            <li><a href="../checkboxradio-checkbox/" data-ajax="false">Checkboxes</a></li>
-            <li><a href="../checkboxradio-radio/" data-ajax="false">Radio buttons</a></li>
+            <li><a href="#" data-ajax="false">T台模特</a></li>
+            <li><a href="#" data-ajax="false">广告模特</a></li>
+            <li><a href="#" data-ajax="false">人体模特</a></li>
+            <li><a href="#" data-ajax="false">彩绘模特</a></li>
+            <li><a href="#" data-ajax="false">车模</a></li>
+            <li><a href="#" data-ajax="false">房模</a></li>
+            <li><a href="#" data-ajax="false">表演模特</a></li>
+            <li><a href="#" data-ajax="false">占位模特</a></li>
           </ul>
         </li>
         <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
-          <h3>Collapsible (set) widget</h3>
+          <h3>家教</h3>
           <ul>
-            <li><a href="../collapsible/" data-ajax="false">Collapsible</a></li>
-            <li><a href="../collapsible-dynamic/" data-ajax="false">Dynamic collapsibles</a></li>
-            <li><a href="../collapsibleset/" data-ajax="false">Collapsible set</a></li>
+            <li><a href="#" data-ajax="false">幼教</a></li>
+            <li><a href="#" data-ajax="false">小学</a></li>
+            <li><a href="#" data-ajax="false">初中</a></li>
+            <li><a href="#" data-ajax="false">高中</a></li>
+            <li><a href="#" data-ajax="false">体艺</a></li>
+            <li><a href="#" data-ajax="false">成人</a></li>
           </ul>
         </li>
         <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
-          <h3>Controlgroup widget</h3>
+          <h3>服务</h3>
           <ul>
-            <li><a href="../controlgroup/" data-ajax="false">Controlgroup</a></li>
-            <li><a href="../controlgroup-dynamic/" data-ajax="false">Dynamic controlgroups</a></li>
+            <li><a href="#" data-ajax="false">客服</a></li>
+            <li><a href="#" data-ajax="false">跑腿</a></li>
+            <li><a href="#" data-ajax="false">餐饮</a></li>
+            <li><a href="#" data-ajax="false">翻译</a></li>
+            <li><a href="#" data-ajax="false">家政</a></li>
+            <li><a href="#" data-ajax="false">法律</a></li>
           </ul>
         </li>
-        <li><a href="../datepicker/" data-ajax="false">Datepicker</a></li>
         <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
-          <h3>Events</h3>
+          <h3>影音</h3>
           <ul>
-            <li><a href="../swipe-list/" data-ajax="false">Swipe list items</a></li>
-            <li><a href="../swipe-page/" data-ajax="false">Swipe page navigation</a></li>
+            <li><a href="#" data-ajax="false">配音</a></li>
+            <li><a href="#" data-ajax="false">影视创作</a></li>
+            <li><a href="#" data-ajax="false">摄影</a></li>
+            <li><a href="#" data-ajax="false">后期制作</a></li>
+            <li><a href="#" data-ajax="false">音乐创作</a></li>
+          </ul>
+        </li>
+        <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+          <h3>开发</h3>
+          <ul>
+            <li><a href="#" data-ajax="false">移动应用开发</a></li>
+            <li><a href="#" data-ajax="false">软件开发</a></li>
+            <li><a href="#" data-ajax="false">网站开发</a></li>
+          </ul>
+        </li>
+        <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+          <h3>设计</h3>
+          <ul>
+            <li><a href="#" data-ajax="false">平面设计</a></li>
+            <li><a href="#" data-ajax="false">网页设计</a></li>
+            <li><a href="#" data-ajax="false">室内设计</a></li>
+          </ul>
+        </li>
+        <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+          <h3>其他</h3>
+          <ul>
+            <li><a href="#" data-ajax="false">手工制作</a></li>
+            <li><a href="#" data-ajax="false">表演</a></li>
           </ul>
         </li>
       </ul>
@@ -1052,108 +1180,568 @@
     
 </div><!-- /page -->
 
+
+<!-- 服务方信息 -->
+<div data-role="page" id="server-info-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>服务方信息</h1>
+    <div class="ui-alt-icon ui-nodisc-icon filter-bar">
+      <div class="ui-block-a" href="#model">
+        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">区域</div>
+      </div>
+      <div class="ui-block-b" href="#teach">
+        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">等级</div>
+      </div>
+      <div class="ui-block-c" href="#teach">
+        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">好评率</div>
+      </div>
+      <div class="ui-block-c" href="#teach">
+        <div class="ui-btn ui-btn-icon-right ui-icon-carat-d">按时完成率</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="publish-detail">
+    <div data-role="controlgroup" class="input-group" id="server-list">
+      <div class="ui-btn"><div class="input-item">
+        <div class="server-avatar"></div>
+        <div class="server-info">
+          <div class="server-name">会员名</div>
+          <div class="server-zone">地区</div>
+          <div class="row1"><span>好评率:</span><span>按时完成率:</span></div>
+          <div class="row2"><span>等级:</span><span>完成任务数:</span></div>
+        </div>
+      </div></div>
+
+      <div class="ui-btn"><div class="input-item">
+        <div class="server-avatar"></div>
+        <div class="server-info">
+          <div class="server-name">会员名</div>
+          <div class="server-zone">地区</div>
+          <div class="row1"><span>好评率:</span><span>按时完成率:</span></div>
+          <div class="row2"><span>等级:</span><span>完成任务数:</span></div>
+        </div>
+      </div></div>
+
+    </div>
+  </div>
+
+  <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+    <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+      <li data-icon="home"><a href=".././">Home</a></li>
+      <li><a href="../intro/" data-ajax="false">Introduction</a></li>
+      <li><a href="../button-markup/" data-ajax="false">Buttons</a></li>
+      <li><a href="../button/" data-ajax="false">Button widget</a></li>
+      <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+        <h3>Checkboxradio widget</h3>
+        <ul>
+          <li><a href="../checkboxradio-checkbox/" data-ajax="false">Checkboxes</a></li>
+          <li><a href="../checkboxradio-radio/" data-ajax="false">Radio buttons</a></li>
+        </ul>
+      </li>
+      <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+        <h3>Collapsible (set) widget</h3>
+        <ul>
+          <li><a href="../collapsible/" data-ajax="false">Collapsible</a></li>
+          <li><a href="../collapsible-dynamic/" data-ajax="false">Dynamic collapsibles</a></li>
+          <li><a href="../collapsibleset/" data-ajax="false">Collapsible set</a></li>
+        </ul>
+      </li>
+      <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+        <h3>Controlgroup widget</h3>
+        <ul>
+          <li><a href="../controlgroup/" data-ajax="false">Controlgroup</a></li>
+          <li><a href="../controlgroup-dynamic/" data-ajax="false">Dynamic controlgroups</a></li>
+        </ul>
+      </li>
+      <li><a href="../datepicker/" data-ajax="false">Datepicker</a></li>
+      <li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+        <h3>Events</h3>
+        <ul>
+          <li><a href="../swipe-list/" data-ajax="false">Swipe list items</a></li>
+          <li><a href="../swipe-page/" data-ajax="false">Swipe page navigation</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /panel -->
+
+</div><!-- /page -->
+
 <!-- 待付款任务 -->
-<div data-role="page" id="pay-tasks-page">
-  <div data-role="header" data-theme="b" data-position="fixed">
+<div data-role="page" id="pay-tasks-page" class="user-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
     <h1>待付款任务</h1>
-    <a href="#" data-rel="back">取消</a>
   </div>
 
   <div class="publish-detail">
     <div data-role="controlgroup" class="input-group">
       <div class="ui-btn"><div class="input-item">
         <div class="task-list-title">标题</div>
-        <div class="task-list-detail">
-          <div class="task-list-zone">地区</div>
-          <div class="task-list-pay">金额</div>
-          <div class="task-list-pubtime">发布时间</div>
-        </div>
+        <div class="task-deadline">要求完成时间</div>
+        <div class="task-list-pay">金额</div>
+        <div class="task-btn-pay">付款</div>
       </div></div>
     </div>
   </div>
 </div><!-- /page -->
 
 <!-- 待执行任务 -->
-<div data-role="page" id="exec-tasks-page">
-  <div data-role="header" data-theme="b" data-position="fixed">
+<div data-role="page" id="exec-tasks-page" class="user-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
     <h1>待执行任务</h1>
-    <a href="#" data-rel="back">取消</a>
   </div>
 
   <div class="publish-detail">
     <div data-role="controlgroup" class="input-group">
       <div class="ui-btn"><div class="input-item">
         <div class="task-list-title">标题</div>
-        <div class="task-list-detail">
-          <div class="task-list-zone">地区</div>
-          <div class="task-list-pay">金额</div>
-          <div class="task-list-pubtime">发布时间</div>
-        </div>
+        <div class="task-deadline">要求完成时间</div>
+        <div class="task-list-pay">金额</div>
+        <div class="task-btn-pay">已执行</div>
       </div></div>
     </div>
   </div>
 </div><!-- /page -->
 
 <!-- 待确认任务 -->
-<div data-role="page" id="confirm-tasks-page">
-  <div data-role="header" data-theme="b" data-position="fixed">
+<div data-role="page" id="confirm-tasks-page" class="user-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
     <h1>待确认任务</h1>
-    <a href="#" data-rel="back">取消</a>
   </div>
 
   <div class="publish-detail">
     <div data-role="controlgroup" class="input-group">
       <div class="ui-btn"><div class="input-item">
         <div class="task-list-title">标题</div>
-        <div class="task-list-detail">
-          <div class="task-list-zone">地区</div>
-          <div class="task-list-pay">金额</div>
-          <div class="task-list-pubtime">发布时间</div>
-        </div>
+        <div class="task-deadline">要求完成时间</div>
+        <div class="task-list-pay">金额</div>
+        <div class="task-btn-pay">确认并打款</div>
+      </div></div>
+    </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 退款/投诉 -->
+<div data-role="page" id="cancel-tasks-page" class="user-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>退款/投诉</h1>
+  </div>
+
+  <div class="publish-detail">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn"><div class="input-item">
+        <div class="task-list-title">标题</div>
+        <div class="task-deadline">要求完成时间</div>
+        <div class="task-list-pay">金额</div>
+        <a class="task-btn-cancel" href="#cancel-page">退款</a>
+        <a class="task-btn-tousu" href="#comment-page">投诉</a>
       </div></div>
     </div>
   </div>
 </div><!-- /page -->
 
 <!-- 待评价任务 -->
-<div data-role="page" id="comment-tasks-page">
-  <div data-role="header" data-theme="b" data-position="fixed">
+<div data-role="page" id="comment-tasks-page" class="user-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
     <h1>待评价任务</h1>
-    <a href="#" data-rel="back">取消</a>
   </div>
 
   <div class="publish-detail">
     <div data-role="controlgroup" class="input-group">
       <div class="ui-btn"><div class="input-item">
         <div class="task-list-title">标题</div>
-        <div class="task-list-detail">
-          <div class="task-list-zone">地区</div>
-          <div class="task-list-pay">金额</div>
-          <div class="task-list-pubtime">发布时间</div>
-        </div>
+        <div class="task-deadline">要求完成时间</div>
+        <div class="task-list-pay">金额</div>
+        <a class="task-btn-pay" href="#comment-page">评价</a>
       </div></div>
     </div>
   </div>
 </div><!-- /page -->
 
+<!-- 消息列表 -->
+<div data-role="page" id="message-list-page" class="user-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>消息</h1>
+  </div>
+
+  <div class="publish-detail ui-alt-icon">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn ui-icon-carat-r ui-btn-icon-right"><div class="input-item">
+        <div class="message-list-title">任务通过审核</div>
+        <div class="message-list-sender">系统消息</div>
+        <div class="message-list-date">6月30日</div>
+      </div></div>
+      <div class="ui-btn ui-icon-carat-r ui-btn-icon-right"><div class="input-item">
+        <div class="message-list-title">任务通过审核</div>
+        <div class="message-list-sender">系统消息</div>
+        <div class="message-list-date">6月30日</div>
+      </div></div>
+    </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 消息 -->
+<div data-role="page" id="message-page" class="user-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>消息</h1>
+  </div>
+
+  <div class="message-info" style="background:#EDEDED;">
+    <div>标题:&nbsp;&nbsp;<span>搭赁上线啦</span> </div>
+    <div>发件:&nbsp;&nbsp;<span>系统管理员</span> </div>
+    <div>收件:&nbsp;&nbsp;<span>测试账号</span> </div>
+    <div>时间:&nbsp;&nbsp;<span>2014-08-05</span> </div>
+    <textarea cols="40" rows="20"></textarea>
+  </div>
+
+</div><!-- /page -->
+
 <!-- 我的任务 -->
-<div data-role="page" id="all-tasks-page">
-  <div data-role="header" data-theme="b" data-position="fixed">
+<div data-role="page" id="all-tasks-page" class="user-tasks-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
     <h1>我的任务</h1>
-    <a href="#" data-rel="back">取消</a>
   </div>
 
   <div class="publish-detail">
     <div data-role="controlgroup" class="input-group">
       <div class="ui-btn"><div class="input-item">
-        <div class="task-list-title">标题</div>
-        <div class="task-list-detail">
-          <div class="task-list-zone">地区</div>
-          <div class="task-list-pay">金额</div>
-          <div class="task-list-pubtime">发布时间</div>
-        </div>
+        <div class="task-list-title">招聘淘宝模特</div>
+        <div class="task-list-pay">金额</div>
       </div></div>
     </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 我的收藏 -->
+<div data-role="page" id="my-fav-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>我的收藏</h1>
+  </div>
+
+  <div class="publish-detail">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn"><div class="input-item">
+        <div class="my-fav-title">招聘淘宝模特</div>
+        <div class="my-fav-date">6月30日</div>
+        <div class="my-fav-del">删除</div>
+      </div></div>
+    </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 实名认证 -->
+<div data-role="page" id="real-name-auth-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>实名认证</h1>
+  </div>
+
+  <div class="publish-detail ui-alt-icon">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">姓名</div>
+        <input>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">身份认证号</div>
+        <input>
+      </div></div>
+    </div>
+    <div style="margin:10px">
+        <div class="input-label" style="font-size: 16px;font-weight:bold;">证件上传</div>
+        <div class="cert-image"></div>
+    </div>
+    <div class="main-btn ui-btn ui-corner-all">确认</div>
+  </div>
+</div><!-- /page -->
+
+<!-- 企业认证 -->
+<div data-role="page" id="company-auth-page">
+  <div data-role="header" data-theme="b" data-position="fixed" class="header-btn">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>企业认证</h1>
+  </div>
+
+  <div class="publish-detail ui-alt-icon">
+    <div data-role="controlgroup" class="input-group">
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">企业认证</div>
+        <input>
+      </div></div>
+      <div class="ui-btn"><div class="input-item">
+        <div class="input-label">注册号</div>
+        <input>
+      </div></div>
+    </div>
+    <div style="margin:10px">
+      <div class="input-label" style="font-size: 16px;font-weight:bold;">营业执照上传</div>
+      <div class="cert-image"></div>
+    </div>
+    <div class="main-btn ui-btn ui-corner-all">确认</div>
+  </div>
+</div><!-- /page -->
+
+<!-- 退款 -->
+<div data-role="page" id="cancel-page">
+  <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>退款</h1>
+  </div>
+
+  <div role="main" class="ui-content">
+    <!--<div class="ui-field-contain">-->
+      <label for="cancel-title">标题:</label>
+      <input type="text" name="cancel-title" id="cancel-title" value="">
+    <!--</div>-->
+    <!--<div class="ui-field-contain">-->
+      <label for="no-complaints">申请退款不投诉</label>
+      <input type="checkbox" name="no-complaints" id="no-complaints" value="">
+    <!--</div>-->
+    <!--<div class="ui-field-contain">-->
+      <label for="cancel-sum">金额:</label>
+      <input type="text" name="cancel-sum" id="cancel-sum" value="">
+    <!--</div>-->
+    <!--<div class="ui-field-contain">-->
+      <label for="cancel-reason">申请原因:</label>
+      <select name="cancel-reason" id="cancel-reason" data-native-menu="true">
+        <option value="1">服务方未按时完成</option>
+        <option value="2">服务方未执行</option>
+        <option value="3">服务方未按要求完成</option>
+      </select>
+    <!--</div>-->
+    <!--<div class="ui-field-contain">-->
+      <label for="cancel-description">描述:</label>
+      <textarea cols="40" rows="8" name="cancel-description" id="cancel-description" data-mini="true"></textarea>
+    <!--</div>-->
+    <!--<div class="ui-field-contain">-->
+      <label for="cancel-description">上传图片:</label>
+      <input type="file" name="cancel-pic" id="cancel-pic">
+    <!--</div>-->
+    <button type="submit" id="cancel-confirm" class="ui-shadow ui-btn ui-corner-all ui-mini" style="width:150px;margin-left:auto;margin-right:auto;margin-top:30px;">确认</button>
+  </div>
+</div><!-- /page -->
+
+<!-- 评价管理 -->
+<div data-role="page" id="comment-page">
+  <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+    <a data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>评价管理</h1>
+  </div>
+
+  <div role="main" class="ui-content">
+    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+      <input type="radio" name="radio-choice-b" id="radio-choice-c" value="list" checked="checked">
+      <label for="radio-choice-c">满意</label>
+      <input type="radio" name="radio-choice-b" id="radio-choice-d" value="grid">
+      <label for="radio-choice-d">一般</label>
+      <input type="radio" name="radio-choice-b" id="radio-choice-e" value="gallery">
+      <label for="radio-choice-e">不满意</label>
+    </fieldset>
+    <textarea cols="40" rows="8" name="comment-content" id="comment-content" data-mini="true"></textarea>
+    <div class="comment-row-1">
+      <label>任务相符程度</label>
+      <ul class="comment-stars">
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+    </div>
+    <div class="comment-row-2">
+      <label>需求方的态度</label>
+      <ul class="comment-stars">
+        <li><a class="active" href="#"></a></li>
+        <li><a class="active" href="#"></a></li>
+        <li><a class="active" href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+    </div>
+    <fieldset class="ui-grid-a">
+      <div class="ui-block-a"><div class="comment-btn" href="#home-page">确认评价</div></div>
+      <div class="ui-block-b"><div class="comment-btn" href="#home-page" style="background-color:#e0e0e0">以后再说</div></div>
+    </fieldset>
+  </div>
+</div><!-- /page -->
+
+<!-- 发布成功 -->
+<div data-role="page" id="publish-success-page">
+  <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+    <h1>发布任务</h1>
+  </div>
+
+  <div role="main" class="ui-content">
+    <div class="publish-success-row">
+      <div class="publish-success-right"></div>
+      <div class="publish-success-text">恭喜您！发布成功</div>
+      <div class="publish-success-text publish-preview-btn"><a href="#task-detail-page">预览|查看</a></div>
+    </div>
+  </div>
+</div><!-- /page -->
+
+<!-- 任务展示 -->
+<div data-role="page" id="task-detail-page">
+  <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+    <a href="#home-page" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">&emsp;</a>
+    <h1>任务展示</h1>
+    <a href="#popup-dialog" class="ui-btn-right ui-btn share-btn" data-rel="popup" data-transition="pop">...</a>
+  </div>
+
+  <div data-role="controlgroup" class="input-group ui-alt-icon">
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-title">标题</div>
+      <input readonly>
+    </div></div>
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-type">任务类型</div>
+      <input readonly>
+    </div></div>
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-exec_time">执行时间</div>
+      <input readonly>
+    </div></div>
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-exec_zone">执行区域</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn detail-divider"></div>
+
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-on_time_rate">按时完成率</div>
+      <input readonly>
+    </div></div>
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-good_rate">好评率</div>
+      <input readonly>
+    </div></div>
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-finished_task_num">完成任务数</div>
+      <input readonly>
+    </div></div>
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-rank">等级</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn detail-divider"></div>
+
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-content">任务内容</div>
+      <input readonly>
+    </div></div>
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-complete_standard">完成标准</div>
+      <input readonly>
+    </div></div>
+
+    <!-- Dynamic Content -->
+    <div class="ui-btn option model service other"><div class="input-item">
+      <div class="input-label" id="detail-age">年龄</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option model"><div class="input-item">
+      <div class="input-label" id="detail-height">身高</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option model"><div class="input-item">
+      <div class="input-label" id="detail-vital_statistics">三围</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option model design"><div class="input-item">
+      <div class="input-label" id="detail-style">风格</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option design media teach develop service other"><div class="input-item">
+      <div class="input-label" id="detail-work_situation">工作情况</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option media"><div class="input-item">
+      <div class="input-label" id="detail-prize_situation">获奖情况</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option model design teach service other"><div class="input-item">
+      <div class="input-label" id="detail-gender">性别</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option model design media develop other"><div class="input-item">
+      <div class="input-label" id="detail-exprience">经验</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option teach"><div class="input-item">
+      <div class="input-label" id="detail-teach_age">教育年限</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option teach"><div class="input-item">
+      <div class="input-label" id="detail-edu_level">教育等级</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option teach"><div class="input-item">
+      <div class="input-label" id="detail-class">课程</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option teach"><div class="input-item">
+      <div class="input-label" id="detail-is_prized">获奖要求</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option teach service"><div class="input-item">
+      <div class="input-label" id="detail-degree">学历</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option develop"><div class="input-item">
+      <div class="input-label" id="detail-dev_age">开发年限</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn option develop"><div class="input-item">
+      <div class="input-label" id="detail-dev_lang">擅长语言</div>
+      <input readonly>
+    </div></div>
+
+    <div class="ui-btn detail-divider"></div>
+
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-payment">支付费用</div>
+      <input readonly>
+    </div></div>
+    <div class="ui-btn"><div class="input-item">
+      <div class="input-label" id="detail-is_public">是否公开</div>
+      <input readonly>
+    </div></div>
+  </div>
+
+  <div data-role="popup" id="popup-dialog">
+    <ul data-role="listview" data-inset="true" data-icon="false">
+      <li><a href="#"><img src="image/weibo.png" class="ui-li-icon">分享到微博</a></li>
+      <li><a href="#"><img src="image/weixin.png" class="ui-li-icon">分享到微信好友</a></li>
+      <li><a href="#"><img src="image/pengyouquan.png" class="ui-li-icon">分享到微信朋友圈</a></li>
+      <li><a href="#"><img src="image/q-zone.png" class="ui-li-icon">分享到空间</a></li>
+      <li><a href="#"><img src="image/shoucang.png" class="ui-li-icon">收藏</a></li>
+    </ul>
   </div>
 </div><!-- /page -->
 

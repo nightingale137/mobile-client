@@ -1,0 +1,17 @@
+{
+  "id": "task1",
+  "title": "标题1",
+  "type": "model",
+  "exec_time": "2014/7/22",
+  "exec_zone": "杭州",
+  "on_time_rate": "95%",
+  "good_rate": "100%",
+  "finished_task_num": 100,
+  "rank": "E",
+  "content": "haha",
+  "complete_standard": "",
+  "age": 28,
+  "height": 171,
+  "payment": "1000",
+  "is_public": true
+}

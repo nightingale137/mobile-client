@@ -14,7 +14,7 @@
 }*/
 
 .adv-bar{
-  background-image: url(http://www.website120.com/data/uploads/sys/ad/102073106153859bbc10d58.gif);
+  background-image: url(../image/banner.png);
   background-size: cover;
   height: 148px;
 }
@@ -24,7 +24,7 @@
 }
 
 .main-btn-group>div{
-  padding: 30px 15px;
+  padding: 20px 15px;
 }
 
 #earn_btn{
@@ -48,12 +48,12 @@
 }
 
 .home-btn-group {
-  position: absolute;
+  /*position: absolute;*/
   left: 0;
   right: 0;
-  bottom: 58px;
+  /*bottom: 58px;*/
   display: block;
-  margin: 0;
+  margin: 5px 0 0 0;
   padding: 0;
 }
 
@@ -143,14 +143,14 @@ div.ui-checkbox>label.ui-btn:hover {
   margin: 0;
 }
 .input-group .ui-btn  .input-item .input-label{
-  width: 22%;
+  width: 25%;
   text-align: left;
   border-right: #ccc solid 1px;
   display: inline-block;
   padding: 10px;
 }
 .input-group .ui-btn  .input-item .ui-input-text,.input-group .ui-btn .input-item .ui-select,.input-group .ui-btn .input-item .ui-checkbox{
-  width: 70%;
+  width: 67%;
   display: inline-block;
   margin: 0;
   padding: 0 0 5px 0;
@@ -195,7 +195,26 @@ div.ui-checkbox>label.ui-btn:hover {
 .input-group>.ui-controlgroup-controls>.ui-btn{
   border-bottom-width: 0;
 }
-.publish-detail>.ui-btn{
+
+.input-group .ui-btn.ui-first-child{
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group .ui-btn.ui-last-child{
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ui-alt-icon .ui-btn:after {
+  background-color: rgba(0,0,0,.0);
+}
+
+/*.publish-detail>.ui-btn{
   margin:20px;
 }
 .publish-detail>.ui-btn:hover{
@@ -214,6 +233,49 @@ div.ui-checkbox>label.ui-btn:hover {
 }
 .publish-detail>.ui-btn:active,#signin-btn:active,#user-center-page>.user-info-signin>.ui-btn:active{
   background-color: #123B81;
+}*/
+#publish-page>.ui-btn{
+  margin:20px;
+}
+#publish-page>.ui-btn:hover{
+  margin:20px;
+}
+#publish-page>.ui-btn,#signin-btn,#user-center-page>.user-info-signin>.ui-btn{
+  background-color: #2D529C;
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px 0 #059;
+}
+#publish-page>.ui-btn:hover,#signin-btn:hover,#user-center-page>.user-info-signin>.ui-btn:hover{
+  background-color: #2D529C;
+  color: #fff;
+  text-shadow: 0 1px 0 #059;
+}
+#publish-page>.ui-btn:active,#signin-btn:active,#user-center-page>.user-info-signin>.ui-btn:active{
+  background-color: #123B81;
+}
+
+/* 账号 */
+#account-page .publish-detail a{
+  background-color: #ffffff;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid #aaa;
+}
+#account-page .ui-listview{
+  padding: 0 10px;
+}
+#account-page li{
+  margin-bottom: 10px;
+}
+#account-page .cert-label{
+  margin: 25px 15px 15px 15px;
+  color: #4365a7;
+  font-weight: bold;
+}
+#account-page button {
+  width: 100px;
+  margin: 10px auto;
 }
 
 /* 城市列表 */
@@ -266,7 +328,7 @@ div.ui-checkbox>label.ui-btn:hover {
 }
 #user-center-page .user-info-image{
   position: absolute;
-  background-image: url(http://www.website120.com/data/avatar/default/man_big.jpg);
+  background: url(../image/avatar2.png) no-repeat center center;
   background-size: cover;
   top: 15px;
   left: 15px;
@@ -357,6 +419,14 @@ div.ui-checkbox>label.ui-btn:hover {
 .filter-bar{
   height: 35px;
 }
+.ui-header .ui-btn-left{
+  border: 0 !important;
+  background-color: #2e539d !important;
+  color: #fff !important;
+}
+.ui-header .ui-btn-left:after{
+  background-color: #2e539d !important;
+}
 html .ui-bar-b .ui-btn{
   background-color: #eee;
   color: #000;
@@ -378,6 +448,15 @@ html .ui-bar-b .ui-btn:active{
   margin: 0;
   background-color: #ddd;
 }
+
+#tasks-page .filter-bar .ui-select{
+  margin: 0;
+}
+#tasks-page .filter-bar .ui-select a{
+  border-radius: 0;
+  background-color: #eee;
+  color: #000;
+}
 #tasks-page .publish-detail{
   top:70px;
 }
@@ -393,6 +472,7 @@ html .ui-bar-b .ui-btn:active{
   text-align: left;
   margin-left: 20px;
   margin-bottom:10px;
+  color: #2e539d;
 }
 #tasks-page .task-list-detail{
   width:100%;
@@ -414,4 +494,488 @@ html .ui-bar-b .ui-btn:active{
   width:40%;
   text-align: left;
   display: inline-block;
+}
+
+/* 服务方信息 */
+#server-info-page .publish-detail{
+  top:70px;
+}
+#server-info-page .input-item{
+  height:160px;
+  text-align:left;
+  display: inline-block;
+}
+#server-info-page .ui-controlgroup-controls>div:active{
+  background-color: #ddd;
+}
+
+#server-info-page .server-avatar{
+  position: absolute;
+  /*background-color: #ddd;*/
+  background: url(../image/avatar.png) no-repeat center center;
+  background-size: contain;
+  width: 120px;
+  height: 90%;
+  z-index: 1;
+}
+#server-info-page .server-info{
+  position: absolute;
+  width: 100%;
+  padding-left: 120px;
+  height: 90%;
+  z-index: 0;
+}
+
+#server-info-page .server-name{
+  font-size: 1.2em;
+  font-weight: bold;
+  width:100%;
+  margin-left:20px;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+#server-info-page .server-zone{
+  width:100%;
+  margin-left: 20px;
+  margin-bottom:10px;
+}
+
+#server-info-page .row1{
+  width:100%;
+  margin-left: 20px;
+  margin-bottom:10px;
+  display: inline-block;
+}
+
+#server-info-page .row1>span{
+  width:30%;
+  float: left;
+}
+
+#server-info-page .row2{
+  width:100%;
+  margin-left: 20px;
+  margin-bottom:10px;
+}
+
+#server-info-page .row2>span{
+  width:30%;
+  float: left;
+}
+
+#server-info-page .task-list-detail{
+  width:100%;
+  display: inline-block;
+  font-weight: normal;
+}
+#server-info-page .task-list-zone{
+  width:30%;
+  text-align: left;
+  margin-left: 20px;
+  display: inline-block;
+}
+#server-info-page .task-list-pay{
+  width:30%;
+  text-align: left;
+  display: inline-block;
+}
+#server-info-page .task-list-pubtime{
+  width:40%;
+  text-align: left;
+  display: inline-block;
+}
+
+/* 待付款任务 */
+.user-tasks-page .publish-detail{
+  top:35px;
+}
+.user-tasks-page .input-item{
+  height: 60px;
+  position: relative;
+}
+.user-tasks-page .task-list-title{
+  width: 40%;
+  top: 0px;
+  left: 10px;
+  text-align: left;
+  position: absolute;
+}
+.user-tasks-page .task-deadline{
+  width: 40%;
+  top: 0px;
+  right: 10px;
+  text-align: right;
+  position: absolute;
+}
+.user-tasks-page .task-list-pay{
+  width: 40%;
+  top: 30px;
+  left: 10px;
+  text-align: left;
+  position: absolute;
+}
+.user-tasks-page .task-btn-pay{
+  width: 80px;
+  top: 30px;
+  right: 10px;
+  padding: 8px;
+  position: absolute;
+  text-align: center;
+  background-color: #E3620C;
+  color: #fff;
+  text-shadow: none;
+  border-radius: 3px;
+}
+.user-tasks-page .task-btn-pay:active{
+  background-color: #e34d20;
+}
+
+/* 退款/投诉 */
+.user-tasks-page .publish-detail{
+  top:35px;
+}
+.user-tasks-page .input-item{
+  height: 60px;
+  position: relative;
+}
+.user-tasks-page .task-list-title{
+  width: 40%;
+  top: 0px;
+  left: 10px;
+  text-align: left;
+  position: absolute;
+}
+.user-tasks-page .task-deadline{
+  width: 40%;
+  top: 0px;
+  right: 10px;
+  text-align: right;
+  position: absolute;
+}
+.user-tasks-page .task-list-pay{
+  width: 40%;
+  top: 30px;
+  left: 10px;
+  text-align: left;
+  position: absolute;
+}
+.user-tasks-page .task-btn-pay{
+  width: 80px;
+  top: 30px;
+  right: 10px;
+  padding: 8px;
+  position: absolute;
+  text-align: center;
+  background-color: #E3620C;
+  color: #fff;
+  text-shadow: none;
+  border-radius: 3px;
+}
+.user-tasks-page .task-btn-pay:active{
+  background-color: #e34d20;
+}
+.user-tasks-page .task-btn-cancel{
+  position: absolute;
+  top: 30px;
+  right: 60px;
+}
+.user-tasks-page .task-btn-tousu{
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+
+/* 消息列表 */
+#message-list-page .input-group .ui-controlgroup-controls :active{
+  background-color: #e4e4e4;
+}
+.publish-detail .ui-btn-icon-right:after{
+  opacity: .4;
+  background-color: transparent;
+}
+#message-list-page .input-item{
+  height: 25px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+#message-list-page .message-list-title{
+  width: 50%;
+  text-align: left;
+  float: left;
+  color: #E3620C;
+  text-decoration: underline;
+}
+#message-list-page .message-list-sender{
+  width: 25%;
+  text-align: left;
+  float: left;
+}
+#message-list-page .message-list-date{
+  width: 20%;
+  text-align: left;
+  float: left;
+}
+
+/* 消息 */
+#message-page .message-info{
+  background: #EDEDED;
+  padding: 10px;
+}
+#message-page .message-info div{
+  font-weight: bold;
+  padding: 5px 0;
+}
+/*#message-page .message-list-title{
+  width: 50%;
+  text-align: left;
+  float: left;
+  color: #E3620C;
+}
+#message-page .message-list-sender{
+  width: 25%;
+  text-align: left;
+  float: left;
+}
+#message-page .message-list-date{
+  width: 20%;
+  text-align: left;
+  float: left;
+}*/
+
+/* 我的收藏 */
+#my-fav-page .input-group .ui-controlgroup-controls :active{
+  /*background-color: #e4e4e4;*/
+}
+#my-fav-page .input-item{
+  height: 25px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+#my-fav-page .my-fav-title{
+  width: 40%;
+  text-align: left;
+  float: left;
+}
+#my-fav-page .my-fav-date{
+  width: 20%;
+  text-align: left;
+  float: left;
+}
+#my-fav-page .my-fav-del{
+  width: 20%;
+  text-align: left;
+  float: right;
+  color: #E3620C;
+  text-decoration: underline;
+}
+
+/* 编辑资料 */
+#edit-account-page{
+  background-color: #e4e4e4;
+}
+
+#edit-account-page .user-edit-1{
+  border: 1px solid #c9c9c9;
+  height: 140px;
+  margin:10px;
+}
+
+#edit-account-page .top-left-col{
+  width:30%;
+  height:100%;
+  float:left;
+  font-size: .8em;
+}
+#edit-account-page .user-avatar{
+  background-color: #eee;
+  height:100px;
+  background: url(../image/avatar.png) no-repeat center center;
+  background-size: contain;
+}
+#edit-account-page .user-age{
+  text-align: center;
+  font-weight: bold;
+  color: #2e539d;
+}
+#edit-account-page .user-name{
+  height: 80px;
+  line-height: 100px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+#edit-account-page .user-city{
+  text-align: center;
+}
+#edit-account-page .top-right-col{
+  width:70%;
+  height: 100%;
+  float:left;
+  font-size: .6em;
+}
+
+#edit-account-page .top-right-col-row-1{
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+#edit-account-page .row-left{
+  width: 35%;
+  float: left;
+}
+
+#edit-account-page .row-right{
+  width: 60%;
+  float: left;
+}
+
+#edit-account-page span{
+  font-weight: bold;
+  color: #2e539d;
+}
+
+#edit-account-page .user-edit-divider{
+  border: 1px solid #c9c9c9;
+  height: 10px;
+  margin: -11px 10px 0 10px;
+}
+
+#edit-account-page .user-edit-2{
+  border: 1px solid #c9c9c9;
+  /*height: 150px;*/
+  margin: -1px 10px 10px 10px;
+  padding: 5px;
+}
+
+#edit-account-page .user-edit-3{
+  border: 1px solid #c9c9c9;
+  /*height: 150px;*/
+  margin: -1px 10px 10px 10px;
+  padding: 5px;
+}
+#edit-account-page textarea{
+  border-radius: 0;
+}
+
+#edit-account-page .image-list{
+  display: inline-block;
+}
+#edit-account-page .image{
+  background-color: #f00;
+  margin: 4px;
+  float:left;
+  width:75px;
+  height:100px;
+}
+
+#edit-account-page .btn-add-image{
+  border: 2px solid #aaa;
+  background: url(../image/img-add-btn.png) no-repeat center center;
+  background-size: contain;
+  margin: 4px;
+  float:left;
+  width:75px;
+  height:100px;
+}
+
+/* 实名认证 */
+#real-name-auth-page .cert-image{
+  margin: 5px auto;
+  height: 150px;
+  width: 100px;
+  border: 2px solid #aaa;
+  background: url(../image/img-add-btn.png) no-repeat center center;
+  background-size: contain;
+}
+
+/* 实名认证 */
+#company-auth-page .cert-image{
+  margin: 5px auto;
+  height: 150px;
+  width: 100px;
+  border: 2px solid #aaa;
+  background: url(../image/img-add-btn.png) no-repeat center center;
+  background-size: contain;
+}
+
+#comment-page .comment-row-1, #comment-page .comment-row-2{
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+#comment-page .comment-row-1 label, #comment-page .comment-row-2 label{
+  float: left;
+  margin-right: 8px;
+}
+
+/* 评价管理 */
+#comment-page ul{
+  margin: 0;
+  padding: 0;
+}
+
+#comment-page ul li{
+  list-style: none;
+  float: left;
+}
+
+#comment-page ul li a {
+  display: block;
+  width: 33px;
+  height: 33px;
+  margin: -8px 0 0 0;
+  background: url(../image/gray-star.png) no-repeat 0 0;
+}
+#comment-page ul li a.active {
+  background: url(../image/red-star.png) no-repeat 0 0;
+}
+#comment-page .comment-btn{
+  width: 65px;
+  height: 30px;
+  line-height: 30px;
+  padding: 5px 30px;
+  margin: 20px auto;
+  text-align: center;
+  background-color: #E3620C;
+  text-shadow: none;
+  border-radius: 3px;
+}
+#comment-page .comment-btn:active{
+  background-color: #e34d20;
+}
+
+/* 发布成功 */
+#publish-success-page .publish-success-row{
+  display: inline-block;
+  margin: 50px auto 0 auto;
+}
+#publish-success-page .publish-success-right{
+  width:43px;
+  height:43px;
+  line-height:43px;
+  background: url(../image/duihao.png) no-repeat 0 0;
+  float:left;
+}
+#publish-success-page .publish-success-text{
+  height: 43px;
+  line-height: 43px;
+  float: left;
+  font-weight: bold;
+  margin-left: 10px;
+}
+#publish-success-page .publish-preview-btn{
+  height: 43px;
+  line-height: 43px;
+  float: left;
+  font-weight: bold;
+  margin-left: 10px;
+}
+#task-detail-page .share-btn, #signin-page .reg-btn{
+  color: #fff;
+  background-color: #2e539d !important;
+  font-weight: bold;
+  border: 0;
 }
